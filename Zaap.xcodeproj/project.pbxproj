@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2A23EA56288AEFC800D6DF02 /* ZaapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A23EA55288AEFC800D6DF02 /* ZaapApp.swift */; };
+		2A23EA58288AEFC800D6DF02 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A23EA57288AEFC800D6DF02 /* ContentView.swift */; };
+		2A23EA5A288AEFC800D6DF02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A23EA59288AEFC800D6DF02 /* Assets.xcassets */; };
+		2A23EA5D288AEFC800D6DF02 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A23EA5C288AEFC800D6DF02 /* Preview Assets.xcassets */; };
+		2A23EA67288AEFC800D6DF02 /* ZaapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A23EA66288AEFC800D6DF02 /* ZaapTests.swift */; };
+		2A23EA71288AEFC800D6DF02 /* ZaapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A23EA70288AEFC800D6DF02 /* ZaapUITests.swift */; };
+		2A23EA73288AEFC800D6DF02 /* ZaapUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A23EA72288AEFC800D6DF02 /* ZaapUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2A23EA63288AEFC800D6DF02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A23EA4A288AEFC800D6DF02 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A23EA51288AEFC800D6DF02;
+			remoteInfo = Zaap;
+		};
+		2A23EA6D288AEFC800D6DF02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A23EA4A288AEFC800D6DF02 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A23EA51288AEFC800D6DF02;
+			remoteInfo = Zaap;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2A23EA52288AEFC800D6DF02 /* Zaap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zaap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A23EA55288AEFC800D6DF02 /* ZaapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZaapApp.swift; sourceTree = "<group>"; };
+		2A23EA57288AEFC800D6DF02 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2A23EA59288AEFC800D6DF02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2A23EA5C288AEFC800D6DF02 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2A23EA62288AEFC800D6DF02 /* ZaapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZaapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A23EA66288AEFC800D6DF02 /* ZaapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZaapTests.swift; sourceTree = "<group>"; };
+		2A23EA6C288AEFC800D6DF02 /* ZaapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZaapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A23EA70288AEFC800D6DF02 /* ZaapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZaapUITests.swift; sourceTree = "<group>"; };
+		2A23EA72288AEFC800D6DF02 /* ZaapUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZaapUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2A23EA4F288AEFC800D6DF02 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A23EA5F288AEFC800D6DF02 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A23EA69288AEFC800D6DF02 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2A23EA49288AEFC800D6DF02 = {
+			isa = PBXGroup;
+			children = (
+				2A23EA54288AEFC800D6DF02 /* Zaap */,
+				2A23EA65288AEFC800D6DF02 /* ZaapTests */,
+				2A23EA6F288AEFC800D6DF02 /* ZaapUITests */,
+				2A23EA53288AEFC800D6DF02 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2A23EA53288AEFC800D6DF02 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A23EA52288AEFC800D6DF02 /* Zaap.app */,
+				2A23EA62288AEFC800D6DF02 /* ZaapTests.xctest */,
+				2A23EA6C288AEFC800D6DF02 /* ZaapUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2A23EA54288AEFC800D6DF02 /* Zaap */ = {
+			isa = PBXGroup;
+			children = (
+				2A23EA55288AEFC800D6DF02 /* ZaapApp.swift */,
+				2A23EA57288AEFC800D6DF02 /* ContentView.swift */,
+				2A23EA59288AEFC800D6DF02 /* Assets.xcassets */,
+				2A23EA5B288AEFC800D6DF02 /* Preview Content */,
+			);
+			path = Zaap;
+			sourceTree = "<group>";
+		};
+		2A23EA5B288AEFC800D6DF02 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				2A23EA5C288AEFC800D6DF02 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2A23EA65288AEFC800D6DF02 /* ZaapTests */ = {
+			isa = PBXGroup;
+			children = (
+				2A23EA66288AEFC800D6DF02 /* ZaapTests.swift */,
+			);
+			path = ZaapTests;
+			sourceTree = "<group>";
+		};
+		2A23EA6F288AEFC800D6DF02 /* ZaapUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2A23EA70288AEFC800D6DF02 /* ZaapUITests.swift */,
+				2A23EA72288AEFC800D6DF02 /* ZaapUITestsLaunchTests.swift */,
+			);
+			path = ZaapUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2A23EA51288AEFC800D6DF02 /* Zaap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A23EA76288AEFC800D6DF02 /* Build configuration list for PBXNativeTarget "Zaap" */;
+			buildPhases = (
+				2A23EA4E288AEFC800D6DF02 /* Sources */,
+				2A23EA4F288AEFC800D6DF02 /* Frameworks */,
+				2A23EA50288AEFC800D6DF02 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Zaap;
+			productName = Zaap;
+			productReference = 2A23EA52288AEFC800D6DF02 /* Zaap.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2A23EA61288AEFC800D6DF02 /* ZaapTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A23EA79288AEFC800D6DF02 /* Build configuration list for PBXNativeTarget "ZaapTests" */;
+			buildPhases = (
+				2A23EA5E288AEFC800D6DF02 /* Sources */,
+				2A23EA5F288AEFC800D6DF02 /* Frameworks */,
+				2A23EA60288AEFC800D6DF02 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A23EA64288AEFC800D6DF02 /* PBXTargetDependency */,
+			);
+			name = ZaapTests;
+			productName = ZaapTests;
+			productReference = 2A23EA62288AEFC800D6DF02 /* ZaapTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2A23EA6B288AEFC800D6DF02 /* ZaapUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A23EA7C288AEFC800D6DF02 /* Build configuration list for PBXNativeTarget "ZaapUITests" */;
+			buildPhases = (
+				2A23EA68288AEFC800D6DF02 /* Sources */,
+				2A23EA69288AEFC800D6DF02 /* Frameworks */,
+				2A23EA6A288AEFC800D6DF02 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A23EA6E288AEFC800D6DF02 /* PBXTargetDependency */,
+			);
+			name = ZaapUITests;
+			productName = ZaapUITests;
+			productReference = 2A23EA6C288AEFC800D6DF02 /* ZaapUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2A23EA4A288AEFC800D6DF02 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					2A23EA51288AEFC800D6DF02 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					2A23EA61288AEFC800D6DF02 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 2A23EA51288AEFC800D6DF02;
+					};
+					2A23EA6B288AEFC800D6DF02 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 2A23EA51288AEFC800D6DF02;
+					};
+				};
+			};
+			buildConfigurationList = 2A23EA4D288AEFC800D6DF02 /* Build configuration list for PBXProject "Zaap" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2A23EA49288AEFC800D6DF02;
+			productRefGroup = 2A23EA53288AEFC800D6DF02 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2A23EA51288AEFC800D6DF02 /* Zaap */,
+				2A23EA61288AEFC800D6DF02 /* ZaapTests */,
+				2A23EA6B288AEFC800D6DF02 /* ZaapUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2A23EA50288AEFC800D6DF02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A23EA5D288AEFC800D6DF02 /* Preview Assets.xcassets in Resources */,
+				2A23EA5A288AEFC800D6DF02 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A23EA60288AEFC800D6DF02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A23EA6A288AEFC800D6DF02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2A23EA4E288AEFC800D6DF02 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A23EA58288AEFC800D6DF02 /* ContentView.swift in Sources */,
+				2A23EA56288AEFC800D6DF02 /* ZaapApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A23EA5E288AEFC800D6DF02 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A23EA67288AEFC800D6DF02 /* ZaapTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A23EA68288AEFC800D6DF02 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A23EA73288AEFC800D6DF02 /* ZaapUITestsLaunchTests.swift in Sources */,
+				2A23EA71288AEFC800D6DF02 /* ZaapUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2A23EA64288AEFC800D6DF02 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A23EA51288AEFC800D6DF02 /* Zaap */;
+			targetProxy = 2A23EA63288AEFC800D6DF02 /* PBXContainerItemProxy */;
+		};
+		2A23EA6E288AEFC800D6DF02 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A23EA51288AEFC800D6DF02 /* Zaap */;
+			targetProxy = 2A23EA6D288AEFC800D6DF02 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2A23EA74288AEFC800D6DF02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2A23EA75288AEFC800D6DF02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2A23EA77288AEFC800D6DF02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Zaap/Preview Content\"";
+				DEVELOPMENT_TEAM = KA8242WP63;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chtzimas.Zaap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2A23EA78288AEFC800D6DF02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Zaap/Preview Content\"";
+				DEVELOPMENT_TEAM = KA8242WP63;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chtzimas.Zaap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2A23EA7A288AEFC800D6DF02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KA8242WP63;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chtzimas.ZaapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Zaap.app/Zaap";
+			};
+			name = Debug;
+		};
+		2A23EA7B288AEFC800D6DF02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KA8242WP63;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chtzimas.ZaapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Zaap.app/Zaap";
+			};
+			name = Release;
+		};
+		2A23EA7D288AEFC800D6DF02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KA8242WP63;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chtzimas.ZaapUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Zaap;
+			};
+			name = Debug;
+		};
+		2A23EA7E288AEFC800D6DF02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KA8242WP63;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chtzimas.ZaapUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Zaap;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2A23EA4D288AEFC800D6DF02 /* Build configuration list for PBXProject "Zaap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A23EA74288AEFC800D6DF02 /* Debug */,
+				2A23EA75288AEFC800D6DF02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A23EA76288AEFC800D6DF02 /* Build configuration list for PBXNativeTarget "Zaap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A23EA77288AEFC800D6DF02 /* Debug */,
+				2A23EA78288AEFC800D6DF02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A23EA79288AEFC800D6DF02 /* Build configuration list for PBXNativeTarget "ZaapTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A23EA7A288AEFC800D6DF02 /* Debug */,
+				2A23EA7B288AEFC800D6DF02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A23EA7C288AEFC800D6DF02 /* Build configuration list for PBXNativeTarget "ZaapUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A23EA7D288AEFC800D6DF02 /* Debug */,
+				2A23EA7E288AEFC800D6DF02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2A23EA4A288AEFC800D6DF02 /* Project object */;
+}
