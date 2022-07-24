@@ -1,0 +1,22 @@
+/*
+  Localizable.strings
+  Zaap
+
+  Created by Christos Tzimas on 22/7/22.
+  
+*/
+
+// Sign In
+"welcome_header" = "Welcome to Zaap!";
+"email_placeholder" = "Email";
+"password_placeholder" = "Password";
+"sign_in" = "Sign In";
+"forgot_password" = "Forgot password?";
+"don't_have_an_account" = "Don't have an account?";
+"sign_up" = "Sign Up";
+"or" = "or";
+
+// Sign Up
+"username_placeholder" = "Username";
+"verify_password_placeholder" = "Verify password";
+"cancel" = "cancel";
