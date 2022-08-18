@@ -14,8 +14,8 @@ struct SignInView: View {
         NavigationView {
             VStack {
                 welcomeView
-                UserDetailView(userDetailText: $viewModel.email, placeholder: L10n.emailPlaceholder)
-                UserDetailView(userDetailText: $viewModel.password, placeholder: L10n.passwordPlaceholder)
+                UserDetailView(userDetailText: $viewModel.email, isInputInvalid: $viewModel.showEmailPrompt, placeholder: L10n.emailPlaceholder, prompt: L10n.signInEmailPrompt)
+                UserDetailView(userDetailText: $viewModel.password, isInputInvalid: $viewModel.showPasswordPrompt, placeholder: L10n.passwordPlaceholder, prompt: L10n.signInPasswordPrompt, isSecure: true)
                 signInButtonView
                     .padding(.vertical, 20)
                 forgotPasswordButtonView
@@ -45,7 +45,7 @@ struct SignInView: View {
     }
     
     private var signInButtonView: some View {
-        Button(action: viewModel.signIn) {
+        Button(action: { viewModel.userAbleToSignIn ? viewModel.signIn() : viewModel.showInvalidInputPrompt() }) {
             Text(L10n.signIn)
                 .frame(maxWidth: .infinity)
         }
@@ -68,7 +68,7 @@ struct SignInView: View {
     }
     
     private var signUpButtonView: some View {
-        Button(action: viewModel.signUp) {
+        Button(action: viewModel.openSignUpForm) {
             NavigationLink(destination: SignUpView()) {
                 Text(L10n.signUp)
                     .fontWeight(.bold)
@@ -82,9 +82,9 @@ struct SignInView: View {
             viewModel.oathSignIn(with: platform)
         }, label: {
             if viewModel.isGoogle(platform) {
-                Image(Asset.googleLogo.name)
+                Image(Assets.googleLogo.name)
             } else {
-                Image(Asset.facebookLogo.name)
+                Image(Assets.facebookLogo.name)
             }
         })
     }

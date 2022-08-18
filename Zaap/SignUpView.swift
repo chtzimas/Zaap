@@ -13,10 +13,10 @@ struct SignUpView: View {
     var body: some View {
         VStack {
             headerView
-            UserDetailView(userDetailText: $viewModel.email, placeholder: L10n.emailPlaceholder)
-            UserDetailView(userDetailText: $viewModel.username, placeholder: L10n.usernamePlaceholder)
-            UserDetailView(userDetailText: $viewModel.password, placeholder: L10n.passwordPlaceholder)
-            UserDetailView(userDetailText: $viewModel.verifiedPassword, placeholder: L10n.verifyPasswordPlaceholder)
+            UserDetailView(userDetailText: $viewModel.email, isInputInvalid: $viewModel.showEmailPrompt, placeholder: L10n.emailPlaceholder, prompt: L10n.signUpEmailPrompt)
+            UserDetailView(userDetailText: $viewModel.username, isInputInvalid: $viewModel.showUsernamePrompt, placeholder: L10n.usernamePlaceholder, prompt: L10n.usernamePrompt)
+            UserDetailView(userDetailText: $viewModel.password, isInputInvalid: $viewModel.showPasswordPrompt ,placeholder: L10n.passwordPlaceholder, prompt: L10n.signUpPasswordPrompt, isSecure: true)
+            UserDetailView(userDetailText: $viewModel.verifiedPassword, isInputInvalid: $viewModel.showVerifiedPasswordPrompt, placeholder: L10n.verifiedPasswordPlaceholder, prompt: L10n.verifiedPasswordPrompt, isSecure: true)
             signUpButtonView
                 .padding(.vertical, 20)
         }
@@ -30,7 +30,7 @@ struct SignUpView: View {
     }
     
     private var signUpButtonView: some View {
-        Button(action: viewModel.signUp) {
+        Button(action: { viewModel.userAbleToSignUp ? viewModel.signUp() : viewModel.showInvalidInputPrompt() }) {
             Text(L10n.signUp)
                 .frame(maxWidth: .infinity)
         }

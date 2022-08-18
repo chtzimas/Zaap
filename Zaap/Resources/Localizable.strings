@@ -15,8 +15,14 @@
 "don't_have_an_account" = "Don't have an account?";
 "sign_up" = "Sign Up";
 "or" = "or";
+"sign_in_email_prompt" = "Please enter a valid email";
+"sign_in_password_prompt" = "Please enter a valid password";
 
 // Sign Up
 "username_placeholder" = "Username";
-"verify_password_placeholder" = "Verify password";
+"verified_password_placeholder" = "Verified password";
 "cancel" = "cancel";
+"sign_up_email_prompt" = "Please enter a valid email";
+"username_prompt" = "Username must have at least 1 character";
+"sign_up_password_prompt" = "Minimum 8 charactes with at least 1 lowercase letter, 1 uppercase, 1 digit and 1 special character";
+"verified_password_prompt" = "Passwords don't match";

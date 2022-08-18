@@ -13,15 +13,15 @@ protocol DependencyInjectorProtocol {
 final class DependencyInjector: DependencyInjectorProtocol {
     static let shared = DependencyInjector()
     
-    var components: [String: Any] = [:]
+    var container: [String: Any] = [:]
     
     private init() {}
     
     func register<Component>(type: Component.Type, component: Any) {
-        components["\(type)"] = component
+        container["\(type)"] = component
     }
     
     func resolve<Component>(type: Component.Type) -> Component? {
-        return components["\(type)"] as? Component
+        return container["\(type)"] as? Component
     }
 }

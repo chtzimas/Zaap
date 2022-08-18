@@ -24,12 +24,24 @@ internal enum L10n {
   internal static let passwordPlaceholder = L10n.tr("Localizable", "password_placeholder")
   /// Sign In
   internal static let signIn = L10n.tr("Localizable", "sign_in")
+  /// Please enter a valid email
+  internal static let signInEmailPrompt = L10n.tr("Localizable", "sign_in_email_prompt")
+  /// Please enter a valid password
+  internal static let signInPasswordPrompt = L10n.tr("Localizable", "sign_in_password_prompt")
   /// Sign Up
   internal static let signUp = L10n.tr("Localizable", "sign_up")
+  /// Please enter a valid email
+  internal static let signUpEmailPrompt = L10n.tr("Localizable", "sign_up_email_prompt")
+  /// Minimum 8 charactes with at least 1 lowercase letter, 1 uppercase, 1 digit and 1 special character
+  internal static let signUpPasswordPrompt = L10n.tr("Localizable", "sign_up_password_prompt")
   /// Username
   internal static let usernamePlaceholder = L10n.tr("Localizable", "username_placeholder")
-  /// Verify password
-  internal static let verifyPasswordPlaceholder = L10n.tr("Localizable", "verify_password_placeholder")
+  /// Username must have at least 1 character
+  internal static let usernamePrompt = L10n.tr("Localizable", "username_prompt")
+  /// Verified password
+  internal static let verifiedPasswordPlaceholder = L10n.tr("Localizable", "verified_password_placeholder")
+  /// Passwords don't match
+  internal static let verifiedPasswordPrompt = L10n.tr("Localizable", "verified_password_prompt")
   /// Welcome to Zaap!
   internal static let welcomeHeader = L10n.tr("Localizable", "welcome_header")
 }
