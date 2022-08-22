@@ -68,13 +68,14 @@ struct SignInView: View {
     }
     
     private var signUpButtonView: some View {
-        Button(action: viewModel.openSignUpForm) {
-            NavigationLink(destination: SignUpView()) {
-                Text(L10n.signUp)
-                    .fontWeight(.bold)
-                    .tint(.orange)
-            }
+        NavigationLink(destination: SignUpView()) {
+            Text(L10n.signUp)
+                .fontWeight(.bold)
+                .tint(.orange)
         }
+        .simultaneousGesture(TapGesture().onEnded {
+            viewModel.clearUserDetails()
+        })
     }
     
     private func oathSignInButtonView(with platform: SignInViewModel.OathSignInPlatform) -> some View {

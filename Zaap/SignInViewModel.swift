@@ -42,6 +42,12 @@ class SignInViewModel: ObservableObject {
         platform == .google
     }
     
-    func openSignUpForm() {}
+    func clearUserDetails() {
+        email = ""
+        password = ""
+        showEmailPrompt = false
+        showPasswordPrompt = false
+    }
+
     func forgotPassword() {}
 }

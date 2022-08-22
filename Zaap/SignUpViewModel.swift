@@ -21,7 +21,7 @@ class SignUpViewModel: ObservableObject {
     enum UserDetailCriteria {
         // valid: Chars, a '@', chars, a '.' and at least one char. e.g: takhs@takaros.c
         static let emailRegex = try! NSRegularExpression(pattern: #"^\S+@\S+\.\S+$"#)
-        // valid: Minimum 8 chars - at least 1 lowercase, 1 uppercase, 1 number and 1 special char. e.g: a1^kklmr
+        // valid: Minimum 8 chars - at least 1 lowercase, 1 uppercase, 1 number and 1 special char. e.g: a1^kklmR
         static let passwordRegex = try! NSRegularExpression(pattern: "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&<>*~:`-]).{8,}$")
     }
     
@@ -55,6 +55,17 @@ class SignUpViewModel: ObservableObject {
         showPasswordPrompt = !passwordMeetsCriteria
         showVerifiedPasswordPrompt = !verifiedPasswordMeetsCriteria
     }
+    
+    func clearUserDetails() {
+            email = ""
+            username = ""
+            password = ""
+            verifiedPassword = ""
+            showEmailPrompt = false
+            showUsernamePrompt = false
+            showPasswordPrompt = false
+            showVerifiedPasswordPrompt = false
+        }
 }
 
 extension NSRegularExpression {

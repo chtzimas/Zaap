@@ -21,6 +21,7 @@ struct SignUpView: View {
                 .padding(.vertical, 20)
         }
         .padding(.horizontal, 30)
+        .onDisappear(perform: viewModel.clearUserDetails)
     }
     
     private var headerView: some View {
