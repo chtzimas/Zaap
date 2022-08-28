@@ -31,7 +31,7 @@ struct SignUpView: View {
     }
     
     private var signUpButtonView: some View {
-        Button(action: { viewModel.userAbleToSignUp ? viewModel.signUp() : viewModel.showInvalidInputPrompt() }) {
+        Button(action: { viewModel.userDetailsMeetCriteria ? viewModel.signUp() : viewModel.showInvalidInputPrompt() }) {
             Text(L10n.signUp)
                 .frame(maxWidth: .infinity)
         }

@@ -1,5 +1,5 @@
 //
-//  ZaapApp.swift
+//  Zaap.swift
 //  Zaap
 //
 //  Created by Christos Tzimas on 18/7/22.
@@ -8,12 +8,11 @@
 import SwiftUI
 
 @main
-struct ZaapApp: App {
+struct Zaap: App {
     let container = DependencyInjector.shared
     
     init() {
-        container.register(type: SignInViewModel.self, component: SignInViewModel())
-        container.register(type: SignUpViewModel.self, component: SignUpViewModel())
+        container.buildDependencies()
     }
     
     var body: some Scene {

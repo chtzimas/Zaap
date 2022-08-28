@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A23EA56288AEFC800D6DF02 /* ZaapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A23EA55288AEFC800D6DF02 /* ZaapApp.swift */; };
+		2A0725A628B4DC58007C38B7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0725A528B4DC58007C38B7 /* Constants.swift */; };
+		2A23EA56288AEFC800D6DF02 /* Zaap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A23EA55288AEFC800D6DF02 /* Zaap.swift */; };
 		2A23EA5A288AEFC800D6DF02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A23EA59288AEFC800D6DF02 /* Assets.xcassets */; };
 		2A23EA5D288AEFC800D6DF02 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A23EA5C288AEFC800D6DF02 /* Preview Assets.xcassets */; };
 		2A23EA67288AEFC800D6DF02 /* ZaapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A23EA66288AEFC800D6DF02 /* ZaapTests.swift */; };
@@ -23,6 +24,11 @@
 		2A3C4323288D711400F77E12 /* LabelledDividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C4322288D711400F77E12 /* LabelledDividerView.swift */; };
 		2A3C4325288D802400F77E12 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C4324288D802400F77E12 /* SignUpView.swift */; };
 		2A3C4327288D813900F77E12 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C4326288D813900F77E12 /* SignUpViewModel.swift */; };
+		2A6FD0D728B8048D002160C7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FD0D628B8048D002160C7 /* User.swift */; };
+		2A6FD0D928B8B5AE002160C7 /* UserRespone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FD0D828B8B5AE002160C7 /* UserRespone.swift */; };
+		2A6FD0DB28B8FA4C002160C7 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FD0DA28B8FA4C002160C7 /* ApiError.swift */; };
+		2AC8E1F028B4F8B2002D48F9 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC8E1EF28B4F8B2002D48F9 /* ApiService.swift */; };
+		2AC8E1F728B4FB62002D48F9 /* ApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC8E1F628B4FB62002D48F9 /* ApiRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,8 +49,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A0725A528B4DC58007C38B7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2A23EA52288AEFC800D6DF02 /* Zaap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zaap.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A23EA55288AEFC800D6DF02 /* ZaapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZaapApp.swift; sourceTree = "<group>"; };
+		2A23EA55288AEFC800D6DF02 /* Zaap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zaap.swift; sourceTree = "<group>"; };
 		2A23EA59288AEFC800D6DF02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A23EA5C288AEFC800D6DF02 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2A23EA62288AEFC800D6DF02 /* ZaapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZaapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +69,11 @@
 		2A3C4322288D711400F77E12 /* LabelledDividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelledDividerView.swift; sourceTree = "<group>"; };
 		2A3C4324288D802400F77E12 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		2A3C4326288D813900F77E12 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		2A6FD0D628B8048D002160C7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2A6FD0D828B8B5AE002160C7 /* UserRespone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRespone.swift; sourceTree = "<group>"; };
+		2A6FD0DA28B8FA4C002160C7 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		2AC8E1EF28B4F8B2002D48F9 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		2AC8E1F628B4FB62002D48F9 /* ApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +101,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A0725A428B4DBE6007C38B7 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				2A0725A528B4DC58007C38B7 /* Constants.swift */,
+				2A23EA55288AEFC800D6DF02 /* Zaap.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		2A23EA49288AEFC800D6DF02 = {
 			isa = PBXGroup;
 			children = (
@@ -112,16 +133,15 @@
 		2A23EA54288AEFC800D6DF02 /* Zaap */ = {
 			isa = PBXGroup;
 			children = (
-				2A23EA87288AF07700D6DF02 /* Resources */,
-				2A23EA55288AEFC800D6DF02 /* ZaapApp.swift */,
-				2A23EA85288AF05700D6DF02 /* DependencyInjector.swift */,
-				2A23EA7F288AF00400D6DF02 /* SignInView.swift */,
-				2A3C4324288D802400F77E12 /* SignUpView.swift */,
-				2A3C4326288D813900F77E12 /* SignUpViewModel.swift */,
-				2A3C4322288D711400F77E12 /* LabelledDividerView.swift */,
-				2A23EA81288AF01800D6DF02 /* SignInViewModel.swift */,
-				2A23EA83288AF02F00D6DF02 /* UserDetailView.swift */,
+				2A6FD0D428B8040C002160C7 /* Models */,
+				2A0725A428B4DBE6007C38B7 /* App */,
 				2A23EA5B288AEFC800D6DF02 /* Preview Content */,
+				2AC8E1F528B4FB4D002D48F9 /* Repositories */,
+				2A23EA87288AF07700D6DF02 /* Resources */,
+				2AC8E1EE28B4F729002D48F9 /* Services */,
+				2AC8E1EB28B4F6C7002D48F9 /* Utils */,
+				2AC8E1EA28B4F6AD002D48F9 /* ViewModels */,
+				2AC8E1E928B4F64B002D48F9 /* Views */,
 			);
 			path = Zaap;
 			sourceTree = "<group>";
@@ -154,12 +174,82 @@
 		2A23EA87288AF07700D6DF02 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2A23EA59288AEFC800D6DF02 /* Assets.xcassets */,
-				2A23EA88288AF09100D6DF02 /* Localizable.strings */,
-				2A23EA8A288AF14300D6DF02 /* L10n.swift */,
 				2A23EA8C288AF3F500D6DF02 /* Assets.swift */,
+				2A23EA59288AEFC800D6DF02 /* Assets.xcassets */,
+				2A23EA8A288AF14300D6DF02 /* L10n.swift */,
+				2A23EA88288AF09100D6DF02 /* Localizable.strings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		2A6FD0D428B8040C002160C7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2A6FD0D828B8B5AE002160C7 /* UserRespone.swift */,
+				2A6FD0D628B8048D002160C7 /* User.swift */,
+				2A6FD0DA28B8FA4C002160C7 /* ApiError.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2AC8E1E928B4F64B002D48F9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2AC8E1ED28B4F6FF002D48F9 /* Shared */,
+				2AC8E1EC28B4F6EA002D48F9 /* Scenes */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2AC8E1EA28B4F6AD002D48F9 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2A23EA81288AF01800D6DF02 /* SignInViewModel.swift */,
+				2A3C4326288D813900F77E12 /* SignUpViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2AC8E1EB28B4F6C7002D48F9 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2A23EA85288AF05700D6DF02 /* DependencyInjector.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		2AC8E1EC28B4F6EA002D48F9 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				2A23EA7F288AF00400D6DF02 /* SignInView.swift */,
+				2A3C4324288D802400F77E12 /* SignUpView.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		2AC8E1ED28B4F6FF002D48F9 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				2A3C4322288D711400F77E12 /* LabelledDividerView.swift */,
+				2A23EA83288AF02F00D6DF02 /* UserDetailView.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		2AC8E1EE28B4F729002D48F9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2AC8E1EF28B4F8B2002D48F9 /* ApiService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		2AC8E1F528B4FB4D002D48F9 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				2AC8E1F628B4FB62002D48F9 /* ApiRepository.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,15 +384,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A23EA84288AF02F00D6DF02 /* UserDetailView.swift in Sources */,
+				2A0725A628B4DC58007C38B7 /* Constants.swift in Sources */,
 				2A23EA8D288AF3F500D6DF02 /* Assets.swift in Sources */,
+				2A6FD0DB28B8FA4C002160C7 /* ApiError.swift in Sources */,
 				2A3C4327288D813900F77E12 /* SignUpViewModel.swift in Sources */,
 				2A23EA86288AF05700D6DF02 /* DependencyInjector.swift in Sources */,
 				2A3C4323288D711400F77E12 /* LabelledDividerView.swift in Sources */,
+				2A6FD0D728B8048D002160C7 /* User.swift in Sources */,
+				2AC8E1F728B4FB62002D48F9 /* ApiRepository.swift in Sources */,
+				2AC8E1F028B4F8B2002D48F9 /* ApiService.swift in Sources */,
 				2A23EA8B288AF14300D6DF02 /* L10n.swift in Sources */,
 				2A23EA80288AF00400D6DF02 /* SignInView.swift in Sources */,
-				2A23EA56288AEFC800D6DF02 /* ZaapApp.swift in Sources */,
+				2A23EA56288AEFC800D6DF02 /* Zaap.swift in Sources */,
 				2A3C4325288D802400F77E12 /* SignUpView.swift in Sources */,
 				2A23EA82288AF01800D6DF02 /* SignInViewModel.swift in Sources */,
+				2A6FD0D928B8B5AE002160C7 /* UserRespone.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

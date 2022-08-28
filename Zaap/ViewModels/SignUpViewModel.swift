@@ -5,6 +5,7 @@
 //  Created by Christos Tzimas on 24/7/22.
 //
 
+import Combine
 import SwiftUI
 
 class SignUpViewModel: ObservableObject {
@@ -12,7 +13,6 @@ class SignUpViewModel: ObservableObject {
     @Published var username = ""
     @Published var password = ""
     @Published var verifiedPassword = ""
-    @Published var userAbleToSignUp = false
     @Published var showEmailPrompt = false
     @Published var showUsernamePrompt = false
     @Published var showPasswordPrompt = false
@@ -25,7 +25,10 @@ class SignUpViewModel: ObservableObject {
         static let passwordRegex = try! NSRegularExpression(pattern: "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&<>*~:`-]).{8,}$")
     }
     
-    private var userDetailsMeetCriteria: Bool {
+    private var apiService: ApiService
+    private var cancellables = Set<AnyCancellable>()
+    
+    var userDetailsMeetCriteria: Bool {
         emailMeetsCriteria && usernameMeetsCriteria && passwordMeetsCriteria && verifiedPasswordMeetsCriteria
     }
     
@@ -45,8 +48,24 @@ class SignUpViewModel: ObservableObject {
         UserDetailCriteria.passwordRegex.matches(verifiedPassword) && verifiedPassword == password
     }
     
+    init(apiService: ApiService) {
+        self.apiService = apiService
+    }
+    
     func signUp() {
-        
+        apiService.createUser(with: ["email": email, "username": username, "password": password])
+            .sink { [weak self] operationResult in
+                guard self != nil else { return }
+                switch operationResult {
+                case .failure(let error):
+                    print(error.localizedDescription)
+                default:
+                    break
+                }
+            } receiveValue: { user in
+                print("\(user) created")
+            }
+            .store(in: &cancellables)
     }
     
     func showInvalidInputPrompt() {
@@ -57,15 +76,15 @@ class SignUpViewModel: ObservableObject {
     }
     
     func clearUserDetails() {
-            email = ""
-            username = ""
-            password = ""
-            verifiedPassword = ""
-            showEmailPrompt = false
-            showUsernamePrompt = false
-            showPasswordPrompt = false
-            showVerifiedPasswordPrompt = false
-        }
+        email = ""
+        username = ""
+        password = ""
+        verifiedPassword = ""
+        showEmailPrompt = false
+        showUsernamePrompt = false
+        showPasswordPrompt = false
+        showVerifiedPasswordPrompt = false
+    }
 }
 
 extension NSRegularExpression {
