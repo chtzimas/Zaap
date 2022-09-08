@@ -6,6 +6,7 @@
 //
 
 import Combine
+import SimpleToast
 import SwiftUI
 
 class SignUpViewModel: ObservableObject {
@@ -17,6 +18,7 @@ class SignUpViewModel: ObservableObject {
     @Published var showUsernamePrompt = false
     @Published var showPasswordPrompt = false
     @Published var showVerifiedPasswordPrompt = false
+    @Published var showToast = false
     
     enum UserDetailCriteria {
         // valid: Chars, a '@', chars, a '.' and at least one char. e.g: takhs@takaros.c
@@ -27,6 +29,8 @@ class SignUpViewModel: ObservableObject {
     
     private var apiService: ApiService
     private var cancellables = Set<AnyCancellable>()
+    private(set) var toastMessage = ""
+    private(set) var toastOptions = SimpleToastOptions(alignment: .bottom, hideAfter: 5)
     
     var userDetailsMeetCriteria: Bool {
         emailMeetsCriteria && usernameMeetsCriteria && passwordMeetsCriteria && verifiedPasswordMeetsCriteria
@@ -55,10 +59,12 @@ class SignUpViewModel: ObservableObject {
     func signUp() {
         apiService.createUser(with: ["email": email, "username": username, "password": password])
             .sink { [weak self] operationResult in
-                guard self != nil else { return }
+                guard let self = self else { return }
                 switch operationResult {
                 case .failure(let error):
                     print(error.localizedDescription)
+                    self.showToast = true
+                    self.toastMessage = error.localizedDescription
                 default:
                     break
                 }

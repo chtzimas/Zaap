@@ -5,6 +5,7 @@
 //  Created by Christos Tzimas on 24/7/22.
 //
 
+import SimpleToast
 import SwiftUI
 
 struct SignUpView: View {
@@ -22,6 +23,12 @@ struct SignUpView: View {
         }
         .padding(.horizontal, 30)
         .onDisappear(perform: viewModel.clearUserDetails)
+        .simpleToast(isPresented: $viewModel.showToast, options: viewModel.toastOptions) {
+            HStack {
+                Image(systemName: "exclamationmark.triangle")
+                Text(viewModel.toastMessage)
+            }
+        }
     }
     
     private var headerView: some View {
