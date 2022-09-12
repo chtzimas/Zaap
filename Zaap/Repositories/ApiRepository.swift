@@ -5,8 +5,8 @@
 //  Created by Christos Tzimas on 23/8/22.
 //
 
-import Combine
 import Foundation
+import SwiftUI
 
 class ApiRepository {
     private let urlSession: URLSession
@@ -15,9 +15,11 @@ class ApiRepository {
         self.urlSession = urlSession
     }
     
-    func createUser(with credentials: [String: String]) -> AnyPublisher<User, ApiError> {
-        let endpoint = Constants.Api.endpoint + Constants.Api.Routes.user
-        let url = URL(string: endpoint)!
+    func createUser(with credentials: [String: String]) async throws -> User {
+        let endpoint = Constants.Api.url + Constants.Api.Routes.user
+        guard let url = URL(string: endpoint) else {
+            throw ApiError.invalidUrl
+        }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -25,36 +27,28 @@ class ApiRepository {
         
         do {
             request.httpBody = try JSONSerialization.data(withJSONObject: credentials, options: .prettyPrinted)
-          } catch {
-              return Fail(error: ApiError.decodingError).eraseToAnyPublisher()
-          }
-        
-        return urlSession
-            .dataTaskPublisher(for: request)
-            .receive(on: DispatchQueue.main)
-            .mapError { error in
-                ApiError.errorCode(error.errorCode)
-            }
-            .flatMap { data, response -> AnyPublisher<User, ApiError> in
-                guard let response = response as? HTTPURLResponse else {
-                    return Fail(error: ApiError.unknown).eraseToAnyPublisher()
-                }
-                if response.statusCode == 201 {
-                    return Just(data)
-                        .decode(type: UserResponse.self, decoder: JSONDecoder())
-                        .mapError { _ in
-                            return ApiError.decodingError
-                        }
-                        .map { $0.data }
-                        .eraseToAnyPublisher()
-                } else {
-                    return Fail(error: ApiError.errorCode(response.statusCode)).eraseToAnyPublisher()
-                }
-            }
-            .eraseToAnyPublisher()
-        
-        func getUsers() {
-            
+        } catch {
+            throw ApiError.encodingError
         }
+        
+        let (data, response) = try await urlSession.data(for: request)
+        guard let response = (response as? HTTPURLResponse) else {
+            throw ApiError.unknown
+        }
+        let statusCode = response.statusCode
+        if statusCode != 201 {
+            throw ApiError.errorCode(statusCode)
+        }
+        let userResponde: UserResponse
+        do {
+            userResponde = try JSONDecoder().decode(UserResponse.self, from: data)
+            return userResponde.data
+        } catch {
+            throw ApiError.decodingError
+        }
+    }
+    
+    func getUsers() {
+        
     }
 }

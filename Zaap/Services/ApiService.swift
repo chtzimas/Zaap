@@ -5,7 +5,6 @@
 //  Created by Christos Tzimas on 23/8/22.
 //
 
-import Combine
 import Foundation
 
 class ApiService{
@@ -15,7 +14,7 @@ class ApiService{
         self.ApiRepository = ApiRepository
     }
     
-    func createUser(with credentials: [String: String]) -> AnyPublisher<User, ApiError> {
-        ApiRepository.createUser(with: credentials)
+    func createUser(with credentials: [String: String]) async throws -> User {
+       try await ApiRepository.createUser(with: credentials)
     }
 }

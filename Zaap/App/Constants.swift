@@ -9,7 +9,7 @@ import Foundation
 
 enum Constants {
     enum Api {
-        static let endpoint = "http://localhost:3000"
+        static let url = "http://localhost:3000"
         
         enum Routes {
             static let user = "/user"

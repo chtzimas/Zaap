@@ -5,7 +5,6 @@
 //  Created by Christos Tzimas on 24/7/22.
 //
 
-import Combine
 import SimpleToast
 import SwiftUI
 
@@ -28,7 +27,6 @@ class SignUpViewModel: ObservableObject {
     }
     
     private var apiService: ApiService
-    private var cancellables = Set<AnyCancellable>()
     private(set) var toastMessage = ""
     private(set) var toastOptions = SimpleToastOptions(alignment: .bottom, hideAfter: 5)
     
@@ -56,22 +54,9 @@ class SignUpViewModel: ObservableObject {
         self.apiService = apiService
     }
     
-    func signUp() {
-        apiService.createUser(with: ["email": email, "username": username, "password": password])
-            .sink { [weak self] operationResult in
-                guard let self = self else { return }
-                switch operationResult {
-                case .failure(let error):
-                    print(error.localizedDescription)
-                    self.showToast = true
-                    self.toastMessage = error.localizedDescription
-                default:
-                    break
-                }
-            } receiveValue: { user in
-                print("\(user) created")
-            }
-            .store(in: &cancellables)
+    func signUp() async throws {
+        let user = try await apiService.createUser(with: ["email": email, "username": username, "password": password])
+        print("user: \(user)")
     }
     
     func showInvalidInputPrompt() {

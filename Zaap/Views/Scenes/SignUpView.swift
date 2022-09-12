@@ -38,7 +38,19 @@ struct SignUpView: View {
     }
     
     private var signUpButtonView: some View {
-        Button(action: { viewModel.userDetailsMeetCriteria ? viewModel.signUp() : viewModel.showInvalidInputPrompt() }) {
+        Button(action: {
+            if viewModel.userDetailsMeetCriteria {
+                Task {
+                    do {
+                        try await viewModel.signUp()
+                    } catch {
+                        print("errorIs: \(error.localizedDescription)")
+                    }
+                }
+            } else {
+                viewModel.showInvalidInputPrompt()
+            }
+        }) {
             Text(L10n.signUp)
                 .frame(maxWidth: .infinity)
         }
