@@ -20,7 +20,7 @@ class UserWebRepository {
         guard let url = URL(string: convertor.path) else {
             throw ApiError.invalidUrl
         }
-        
+
         let contentType = convertor.contentType
         var request = URLRequest(url: url)
         request.httpMethod = convertor.method
@@ -28,7 +28,7 @@ class UserWebRepository {
         request.addValue(contentType, forHTTPHeaderField: "Accept")
         
         do {
-            request.httpBody = try convertor.encodeBody(with: credentials)
+            request.httpBody = try convertor.encode(credentials)
         } catch {
             throw ApiError.encodingError
         }
@@ -45,7 +45,7 @@ class UserWebRepository {
         
         let userResponse: UserResponse
         do {
-            userResponse = try JSONDecoder().decode(UserResponse.self, from: data)
+            userResponse = try convertor.decode(data)
             return userResponse.data
         } catch {
             throw ApiError.decodingError

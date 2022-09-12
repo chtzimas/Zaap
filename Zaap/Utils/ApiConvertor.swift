@@ -29,9 +29,11 @@ extension ApiConvertor {
         HeaderContentType.applicationJson.rawValue
     }
     
-    func encodeBody<T: Encodable>(with body: T) throws -> Data {
-        let encoder = JSONEncoder()
-        encoder.outputFormatting = [.prettyPrinted, .withoutEscapingSlashes]
-        return try encoder.encode(body)
+    func encode<T: Encodable>(_ data: T) throws -> Data {
+        return try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
+    }
+    
+    func decode<T: Decodable>(_ data: Data) throws -> T {
+        return try JSONDecoder().decode(T.self, from: data)
     }
 }
