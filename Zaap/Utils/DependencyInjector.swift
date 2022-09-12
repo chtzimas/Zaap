@@ -13,10 +13,10 @@ final class DependencyInjector {
     private init() {}
     
     func buildDependencies() {
-        DependencyInjector.shared.register(type: ApiRepository.self, component: ApiRepository(urlSession: .shared))
-        DependencyInjector.shared.register(type: ApiService.self, component: ApiService(ApiRepository: DependencyInjector.shared.resolve(type: ApiRepository.self)!))
+        DependencyInjector.shared.register(type: UserWebRepository.self, component: UserWebRepository(urlSession: .shared))
+        DependencyInjector.shared.register(type: UserService.self, component: UserService(userWebRepository: DependencyInjector.shared.resolve(type: UserWebRepository.self)!))
         DependencyInjector.shared.register(type: SignInViewModel.self, component: SignInViewModel())
-        DependencyInjector.shared.register(type: SignUpViewModel.self, component: SignUpViewModel(apiService: DependencyInjector.shared.resolve(type: ApiService.self)!))
+        DependencyInjector.shared.register(type: SignUpViewModel.self, component: SignUpViewModel(userService: DependencyInjector.shared.resolve(type: UserService.self)!))
     }
     
     private func register<Component>(type: Component.Type, component: Any) {

@@ -24,13 +24,15 @@
 		2A3C4323288D711400F77E12 /* LabelledDividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C4322288D711400F77E12 /* LabelledDividerView.swift */; };
 		2A3C4325288D802400F77E12 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C4324288D802400F77E12 /* SignUpView.swift */; };
 		2A3C4327288D813900F77E12 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C4326288D813900F77E12 /* SignUpViewModel.swift */; };
+		2A5FA69928CF44200084719B /* UserApiConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5FA69828CF44200084719B /* UserApiConvertor.swift */; };
+		2A5FA69B28CF46CA0084719B /* ApiConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5FA69A28CF46CA0084719B /* ApiConvertor.swift */; };
 		2A6FD0D728B8048D002160C7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FD0D628B8048D002160C7 /* User.swift */; };
 		2A6FD0D928B8B5AE002160C7 /* UserRespone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FD0D828B8B5AE002160C7 /* UserRespone.swift */; };
 		2A6FD0DB28B8FA4C002160C7 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FD0DA28B8FA4C002160C7 /* ApiError.swift */; };
 		2A93FC3028BFADAE00CF922F /* SimpleToast in Frameworks */ = {isa = PBXBuildFile; productRef = 2A93FC2F28BFADAE00CF922F /* SimpleToast */; };
 		2ABACA2C28BCB75300C7CB8E /* SimpleToast in Frameworks */ = {isa = PBXBuildFile; productRef = 2ABACA2B28BCB75300C7CB8E /* SimpleToast */; };
-		2AC8E1F028B4F8B2002D48F9 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC8E1EF28B4F8B2002D48F9 /* ApiService.swift */; };
-		2AC8E1F728B4FB62002D48F9 /* ApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC8E1F628B4FB62002D48F9 /* ApiRepository.swift */; };
+		2AC8E1F028B4F8B2002D48F9 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC8E1EF28B4F8B2002D48F9 /* UserService.swift */; };
+		2AC8E1F728B4FB62002D48F9 /* UserWebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC8E1F628B4FB62002D48F9 /* UserWebRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,11 +73,13 @@
 		2A3C4322288D711400F77E12 /* LabelledDividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelledDividerView.swift; sourceTree = "<group>"; };
 		2A3C4324288D802400F77E12 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		2A3C4326288D813900F77E12 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		2A5FA69828CF44200084719B /* UserApiConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiConvertor.swift; sourceTree = "<group>"; };
+		2A5FA69A28CF46CA0084719B /* ApiConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConvertor.swift; sourceTree = "<group>"; };
 		2A6FD0D628B8048D002160C7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2A6FD0D828B8B5AE002160C7 /* UserRespone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRespone.swift; sourceTree = "<group>"; };
 		2A6FD0DA28B8FA4C002160C7 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
-		2AC8E1EF28B4F8B2002D48F9 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
-		2AC8E1F628B4FB62002D48F9 /* ApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRepository.swift; sourceTree = "<group>"; };
+		2AC8E1EF28B4F8B2002D48F9 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		2AC8E1F628B4FB62002D48F9 /* UserWebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserWebRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,8 +141,8 @@
 		2A23EA54288AEFC800D6DF02 /* Zaap */ = {
 			isa = PBXGroup;
 			children = (
-				2A6FD0D428B8040C002160C7 /* Models */,
 				2A0725A428B4DBE6007C38B7 /* App */,
+				2A6FD0D428B8040C002160C7 /* Models */,
 				2A23EA5B288AEFC800D6DF02 /* Preview Content */,
 				2AC8E1F528B4FB4D002D48F9 /* Repositories */,
 				2A23EA87288AF07700D6DF02 /* Resources */,
@@ -218,6 +222,8 @@
 			isa = PBXGroup;
 			children = (
 				2A23EA85288AF05700D6DF02 /* DependencyInjector.swift */,
+				2A5FA69828CF44200084719B /* UserApiConvertor.swift */,
+				2A5FA69A28CF46CA0084719B /* ApiConvertor.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -243,7 +249,7 @@
 		2AC8E1EE28B4F729002D48F9 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				2AC8E1EF28B4F8B2002D48F9 /* ApiService.swift */,
+				2AC8E1EF28B4F8B2002D48F9 /* UserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -251,7 +257,7 @@
 		2AC8E1F528B4FB4D002D48F9 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				2AC8E1F628B4FB62002D48F9 /* ApiRepository.swift */,
+				2AC8E1F628B4FB62002D48F9 /* UserWebRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -402,12 +408,14 @@
 				2A3C4327288D813900F77E12 /* SignUpViewModel.swift in Sources */,
 				2A23EA86288AF05700D6DF02 /* DependencyInjector.swift in Sources */,
 				2A3C4323288D711400F77E12 /* LabelledDividerView.swift in Sources */,
+				2A5FA69B28CF46CA0084719B /* ApiConvertor.swift in Sources */,
 				2A6FD0D728B8048D002160C7 /* User.swift in Sources */,
-				2AC8E1F728B4FB62002D48F9 /* ApiRepository.swift in Sources */,
-				2AC8E1F028B4F8B2002D48F9 /* ApiService.swift in Sources */,
+				2AC8E1F728B4FB62002D48F9 /* UserWebRepository.swift in Sources */,
+				2AC8E1F028B4F8B2002D48F9 /* UserService.swift in Sources */,
 				2A23EA8B288AF14300D6DF02 /* L10n.swift in Sources */,
 				2A23EA80288AF00400D6DF02 /* SignInView.swift in Sources */,
 				2A23EA56288AEFC800D6DF02 /* Zaap.swift in Sources */,
+				2A5FA69928CF44200084719B /* UserApiConvertor.swift in Sources */,
 				2A3C4325288D802400F77E12 /* SignUpView.swift in Sources */,
 				2A23EA82288AF01800D6DF02 /* SignInViewModel.swift in Sources */,
 				2A6FD0D928B8B5AE002160C7 /* UserRespone.swift in Sources */,

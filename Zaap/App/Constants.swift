@@ -11,7 +11,7 @@ enum Constants {
     enum Api {
         static let url = "http://localhost:3000"
         
-        enum Routes {
+        enum Endpoints {
             static let user = "/user"
         }
     }

@@ -26,7 +26,7 @@ class SignUpViewModel: ObservableObject {
         static let passwordRegex = try! NSRegularExpression(pattern: "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&<>*~:`-]).{8,}$")
     }
     
-    private var apiService: ApiService
+    private var userService: UserService
     private(set) var toastMessage = ""
     private(set) var toastOptions = SimpleToastOptions(alignment: .bottom, hideAfter: 5)
     
@@ -50,13 +50,13 @@ class SignUpViewModel: ObservableObject {
         UserDetailCriteria.passwordRegex.matches(verifiedPassword) && verifiedPassword == password
     }
     
-    init(apiService: ApiService) {
-        self.apiService = apiService
+    init(userService: UserService) {
+        self.userService = userService
     }
     
     func signUp() async throws {
-        let user = try await apiService.createUser(with: ["email": email, "username": username, "password": password])
-        print("user: \(user)")
+        let user = try await userService.createUser(with: ["email": email, "username": username, "password": password])
+        print("userIs: \(user)")
     }
     
     func showInvalidInputPrompt() {

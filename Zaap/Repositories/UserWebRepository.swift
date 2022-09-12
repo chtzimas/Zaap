@@ -1,5 +1,5 @@
 //
-//  ApiRepository.swift
+//  UserWebRepository.swift
 //  Zaap
 //
 //  Created by Christos Tzimas on 23/8/22.
@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class ApiRepository {
+class UserWebRepository {
     private let urlSession: URLSession
     
     init(urlSession: URLSession) {
@@ -16,17 +16,19 @@ class ApiRepository {
     }
     
     func createUser(with credentials: [String: String]) async throws -> User {
-        let endpoint = Constants.Api.url + Constants.Api.Routes.user
-        guard let url = URL(string: endpoint) else {
+        let convertor = UserApiConvertor.createUser
+        guard let url = URL(string: convertor.path) else {
             throw ApiError.invalidUrl
         }
+        
+        let contentType = convertor.contentType
         var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.httpMethod = convertor.method
+        request.addValue(contentType, forHTTPHeaderField: "Content-Type")
+        request.addValue(contentType, forHTTPHeaderField: "Accept")
         
         do {
-            request.httpBody = try JSONSerialization.data(withJSONObject: credentials, options: .prettyPrinted)
+            request.httpBody = try convertor.encodeBody(with: credentials)
         } catch {
             throw ApiError.encodingError
         }
@@ -35,14 +37,16 @@ class ApiRepository {
         guard let response = (response as? HTTPURLResponse) else {
             throw ApiError.unknown
         }
+        
         let statusCode = response.statusCode
         if statusCode != 201 {
             throw ApiError.errorCode(statusCode)
         }
-        let userResponde: UserResponse
+        
+        let userResponse: UserResponse
         do {
-            userResponde = try JSONDecoder().decode(UserResponse.self, from: data)
-            return userResponde.data
+            userResponse = try JSONDecoder().decode(UserResponse.self, from: data)
+            return userResponse.data
         } catch {
             throw ApiError.decodingError
         }
