@@ -7,27 +7,38 @@
 
 import Foundation
 
-enum ApiError: Error {
-    case invalidUrl
-    case encodingError
-    case decodingError
-    case errorCode(Int)
-    case unknown
-}
+protocol ApiErrorProtocol: LocalizedError {}
 
-extension ApiError: LocalizedError {
-    var errorDescription: String? {
+enum ApiError: ApiErrorProtocol {
+    case invalidUrl
+    case encoding
+    case decoding
+    case unknown
+    
+    public var errorDescription: String? {
         switch self {
         case .invalidUrl:
-            return "The API endpoint url is invalid"
-        case .encodingError:
-            return "Failed to encode the data to send to the API"
-        case .decodingError:
-            return "Failed to decode the data received from the API"
-        case .errorCode(let code):
-            return "\(code) - error code from API"
+            return "The API endpoint url is invalid."
+        case .encoding:
+            return "Failed to encode the data to send to the API."
+        case .decoding:
+            return "Failed to decode the data received from the API."
         case .unknown:
-            return "Unkwown error"
+            return "Something went wrong. Please try again."
         }
+    }
+}
+
+struct UserError: ApiErrorProtocol, Decodable {
+    let message: String?
+    
+    public var errorDescription: String? {
+        message
+    }
+}
+
+extension UserError {
+    enum CodingKeys: String, CodingKey {
+        case message = "message"
     }
 }

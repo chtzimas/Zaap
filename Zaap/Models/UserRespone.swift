@@ -10,3 +10,9 @@ import Foundation
 struct UserResponse: Decodable {
     let data: User
 }
+
+extension UserResponse {
+    enum CodingKeys: String, CodingKey {
+        case data = "user"
+    }
+}

@@ -28,7 +28,7 @@ class SignUpViewModel: ObservableObject {
     
     private var userService: UserService
     private(set) var toastMessage = ""
-    private(set) var toastOptions = SimpleToastOptions(alignment: .bottom, hideAfter: 5)
+    private(set) var toastOptions = SimpleToastOptions(alignment: .bottom, hideAfter: 3)
     
     var userDetailsMeetCriteria: Bool {
         emailMeetsCriteria && usernameMeetsCriteria && passwordMeetsCriteria && verifiedPasswordMeetsCriteria
@@ -55,8 +55,16 @@ class SignUpViewModel: ObservableObject {
     }
     
     func signUp() async throws {
-        let user = try await userService.createUser(with: ["email": email, "username": username, "password": password])
-        print("userIs: \(user)")
+        do {
+            let user = try await userService.createUser(with: ["email": email, "username": username, "password": password])
+            print("user: \(user)")
+        } catch {
+            print("error: \(error)")
+            if let error = error as? ApiErrorProtocol, let message = error.errorDescription {
+                toastMessage = message 
+                await MainActor.run { showToast = true }
+            }
+        }
     }
     
     func showInvalidInputPrompt() {
@@ -66,11 +74,14 @@ class SignUpViewModel: ObservableObject {
         showVerifiedPasswordPrompt = !verifiedPasswordMeetsCriteria
     }
     
-    func clearUserDetails() {
+    func clearUserDetailsInput() {
         email = ""
         username = ""
         password = ""
         verifiedPassword = ""
+    }
+    
+    func clearUserDetailsPrompt() {
         showEmailPrompt = false
         showUsernamePrompt = false
         showPasswordPrompt = false

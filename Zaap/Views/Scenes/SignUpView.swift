@@ -22,12 +22,12 @@ struct SignUpView: View {
                 .padding(.vertical, 20)
         }
         .padding(.horizontal, 30)
-        .onDisappear(perform: viewModel.clearUserDetails)
+        .onDisappear {
+            viewModel.clearUserDetailsInput()
+            viewModel.clearUserDetailsPrompt()
+        }
         .simpleToast(isPresented: $viewModel.showToast, options: viewModel.toastOptions) {
-            HStack {
-                Image(systemName: "exclamationmark.triangle")
-                Text(viewModel.toastMessage)
-            }
+            ToastView(toastMessage: viewModel.toastMessage)
         }
     }
     
@@ -40,12 +40,9 @@ struct SignUpView: View {
     private var signUpButtonView: some View {
         Button(action: {
             if viewModel.userDetailsMeetCriteria {
+                viewModel.clearUserDetailsPrompt()
                 Task {
-                    do {
-                        try await viewModel.signUp()
-                    } catch {
-                        print("errorIs: \(error.localizedDescription)")
-                    }
+                    try await viewModel.signUp()
                 }
             } else {
                 viewModel.showInvalidInputPrompt()

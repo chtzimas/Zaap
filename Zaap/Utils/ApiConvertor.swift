@@ -30,10 +30,18 @@ extension ApiConvertor {
     }
     
     func encode<T: Encodable>(_ data: T) throws -> Data {
-        return try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
+        do {
+            return try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
+        } catch {
+            throw ApiError.encoding
+        }
     }
     
     func decode<T: Decodable>(_ data: Data) throws -> T {
-        return try JSONDecoder().decode(T.self, from: data)
+        do {
+            return try JSONDecoder().decode(T.self, from: data)
+        } catch {
+            throw ApiError.decoding
+        }
     }
 }

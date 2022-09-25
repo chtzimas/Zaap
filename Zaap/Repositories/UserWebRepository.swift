@@ -20,18 +20,13 @@ class UserWebRepository {
         guard let url = URL(string: convertor.path) else {
             throw ApiError.invalidUrl
         }
-
+        
         let contentType = convertor.contentType
         var request = URLRequest(url: url)
         request.httpMethod = convertor.method
         request.addValue(contentType, forHTTPHeaderField: "Content-Type")
         request.addValue(contentType, forHTTPHeaderField: "Accept")
-        
-        do {
-            request.httpBody = try convertor.encode(credentials)
-        } catch {
-            throw ApiError.encodingError
-        }
+        request.httpBody = try convertor.encode(credentials)
         
         let (data, response) = try await urlSession.data(for: request)
         guard let response = (response as? HTTPURLResponse) else {
@@ -39,16 +34,15 @@ class UserWebRepository {
         }
         
         let statusCode = response.statusCode
-        if statusCode != 201 {
-            throw ApiError.errorCode(statusCode)
-        }
-        
-        let userResponse: UserResponse
-        do {
-            userResponse = try convertor.decode(data)
+        switch statusCode {
+        case 201:
+            let userResponse: UserResponse = try convertor.decode(data)
             return userResponse.data
-        } catch {
-            throw ApiError.decodingError
+        case 409:
+            let error: UserError = try convertor.decode(data)
+            throw error
+        default:
+            throw ApiError.unknown
         }
     }
     
