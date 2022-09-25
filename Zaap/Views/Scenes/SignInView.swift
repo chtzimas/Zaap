@@ -12,29 +12,32 @@ struct SignInView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                welcomeView
-                UserDetailView(userDetailText: $viewModel.email, isInputInvalid: $viewModel.showEmailPrompt, placeholder: L10n.emailPlaceholder, prompt: L10n.signInEmailPrompt)
-                UserDetailView(userDetailText: $viewModel.password, isInputInvalid: $viewModel.showPasswordPrompt, placeholder: L10n.passwordPlaceholder, prompt: L10n.signInPasswordPrompt, isSecure: true)
-                signInButtonView
-                    .padding(.vertical, 20)
-                forgotPasswordButtonView
-                LabelledDividerView(label: L10n.or)
-                    .padding(.top, 30)
-                HStack {
-                    oathSignInButtonView(with: .google)
-                        .padding(.trailing, 20)
-                    oathSignInButtonView(with: .facebook)
-                        .padding(.leading, 20)
+            ZStack {
+                BackgroundView()
+                VStack {
+                    welcomeView
+                    UserDetailView(userDetailText: $viewModel.email, isInputInvalid: $viewModel.showEmailPrompt, placeholder: L10n.emailPlaceholder, prompt: L10n.signInEmailPrompt)
+                    UserDetailView(userDetailText: $viewModel.password, isInputInvalid: $viewModel.showPasswordPrompt, placeholder: L10n.passwordPlaceholder, prompt: L10n.signInPasswordPrompt, isSecure: true)
+                    signInButtonView
+                        .padding(.vertical, 20)
+                    forgotPasswordButtonView
+                    LabelledDividerView(label: L10n.or)
+                        .padding(.top, 30)
+                    HStack {
+                        oathSignInButtonView(with: .google)
+                            .padding(.trailing, 20)
+                        oathSignInButtonView(with: .facebook)
+                            .padding(.leading, 20)
+                    }
+                    .padding(.top, 20)
+                    HStack {
+                        dontHaveAnAccountView
+                        signUpButtonView
+                    }
+                    .padding(.top, 40)
                 }
-                .padding(.top, 20)
-                HStack {
-                    dontHaveAnAccountView
-                    signUpButtonView
-                }
-                .padding(.top, 40)
+                .padding(.horizontal, 30)
             }
-            .padding(.horizontal, 30)
         }
     }
     
@@ -42,6 +45,7 @@ struct SignInView: View {
         Text(L10n.welcomeHeader)
             .padding()
             .font(.headline)
+            .foregroundColor(.white)
     }
     
     private var signInButtonView: some View {
@@ -50,7 +54,7 @@ struct SignInView: View {
                 .frame(maxWidth: .infinity)
         }
         .buttonStyle(.borderedProminent)
-        .tint(.orange)
+        .tint(.accentColor)
         .frame(maxWidth: .infinity)
     }
     
@@ -58,20 +62,20 @@ struct SignInView: View {
         Button(action: viewModel.forgotPassword) {
             Text(L10n.forgotPassword)
                 .fontWeight(.bold)
-                .tint(.orange)
+                .tint(.white)
         }
     }
     
     private var dontHaveAnAccountView: some View {
         Text(L10n.donTHaveAnAccount)
-            .foregroundColor(.gray)
+            .foregroundColor(.white)
     }
     
     private var signUpButtonView: some View {
         NavigationLink(destination: SignUpView()) {
             Text(L10n.signUp)
                 .fontWeight(.bold)
-                .tint(.orange)
+                .tint(.white)
         }
         .simultaneousGesture(TapGesture().onEnded {
             viewModel.clearUserDetails()
@@ -83,9 +87,9 @@ struct SignInView: View {
             viewModel.oathSignIn(with: platform)
         }, label: {
             if viewModel.isGoogle(platform) {
-                Image(Assets.googleLogo.name)
+                Image(Asset.Images.googleLogo.name)
             } else {
-                Image(Assets.facebookLogo.name)
+                Image(Asset.Images.facebookLogo.name)
             }
         })
     }

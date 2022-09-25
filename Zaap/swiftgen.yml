@@ -1,0 +1,12 @@
+strings:
+  inputs: /Users/chtzimas/Desktop/Projects/Zaap/Zaap/Resources/Localizable.strings
+  outputs:
+    - templateName: structured-swift5
+      output: /Users/chtzimas/Desktop/Projects/Zaap/Zaap/Resources/L10n.swift
+xcassets:
+  inputs:
+    - /Users/chtzimas/Desktop/Projects/Zaap/Zaap/Resources/Images.xcassets
+    - /Users/chtzimas/Desktop/Projects/Zaap/Zaap/Resources/Colors.xcassets
+  outputs:
+    - templateName: swift5
+      output: /Users/chtzimas/Desktop/Projects/Zaap/Zaap/Resources/Assets.swift

@@ -12,7 +12,7 @@ struct LabelledDividerView: View {
     let horizontalPadding: CGFloat
     let color: Color
     
-    init(label: String, horizontalPadding: CGFloat = 6, color: Color = .gray) {
+    init(label: String, horizontalPadding: CGFloat = 6, color: Color = .white) {
         self.label = label
         self.horizontalPadding = horizontalPadding
         self.color = color

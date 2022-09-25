@@ -20,10 +20,15 @@ internal typealias AssetImageTypeAlias = ImageAsset.Image
 // MARK: - Asset Catalogs
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
-internal enum Assets {
-  internal static let accentColor = ColorAsset(name: "AccentColor")
-  internal static let facebookLogo = ImageAsset(name: "facebook_logo")
-  internal static let googleLogo = ImageAsset(name: "google_logo")
+internal enum Asset {
+  internal enum Colors {
+    internal static let accentColor = ColorAsset(name: "AccentColor")
+    internal static let backgroundColor = ColorAsset(name: "BackgroundColor")
+  }
+  internal enum Images {
+    internal static let facebookLogo = ImageAsset(name: "facebook_logo")
+    internal static let googleLogo = ImageAsset(name: "google_logo")
+  }
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 
