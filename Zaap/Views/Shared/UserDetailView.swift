@@ -41,6 +41,7 @@ struct UserDetailView: View {
             Text(isInputInvalid ? prompt : "")
                 .padding([.leading, .bottom])
                 .font(.subheadline)
+                .foregroundColor(.white)
         }
     }
 }

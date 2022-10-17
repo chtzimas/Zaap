@@ -1,0 +1,27 @@
+//
+//  MainView.swift
+//  Zaap
+//
+//  Created by Christos Tzimas on 9/10/22.
+//
+
+import SwiftUI
+
+struct MainView: View {
+    @StateObject var viewModel = DependencyInjector.shared.resolve(type: MainViewModel.self)!
+    
+    var body: some View {
+        ZStack {
+            BackgroundView()
+            VStack {
+                HeaderView(title: "Hello, \(viewModel.getUsername())")
+            }
+        }
+    }
+}
+
+struct MainView_Previews: PreviewProvider {
+    static var previews: some View {
+        MainView()
+    }
+}

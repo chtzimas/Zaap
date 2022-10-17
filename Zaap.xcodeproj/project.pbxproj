@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A05F5BD28F3208B005AB854 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A05F5BC28F3208B005AB854 /* MainView.swift */; };
+		2A05F5C128F330D0005AB854 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A05F5C028F330D0005AB854 /* BackgroundView.swift */; };
+		2A05F5C528F343A8005AB854 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A05F5C428F343A8005AB854 /* HeaderView.swift */; };
+		2A05F5C728F34B91005AB854 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A05F5C628F34B91005AB854 /* MainViewModel.swift */; };
 		2A0725A628B4DC58007C38B7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0725A528B4DC58007C38B7 /* Constants.swift */; };
 		2A23EA56288AEFC800D6DF02 /* Zaap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A23EA55288AEFC800D6DF02 /* Zaap.swift */; };
 		2A23EA5A288AEFC800D6DF02 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A23EA59288AEFC800D6DF02 /* Images.xcassets */; };
@@ -31,7 +35,7 @@
 		2A6FD0DB28B8FA4C002160C7 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FD0DA28B8FA4C002160C7 /* ApiError.swift */; };
 		2A93FC3028BFADAE00CF922F /* SimpleToast in Frameworks */ = {isa = PBXBuildFile; productRef = 2A93FC2F28BFADAE00CF922F /* SimpleToast */; };
 		2AB2F47D28E08B2A000863B1 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB2F47C28E08B2A000863B1 /* ToastView.swift */; };
-		2AB2F47F28E0AE6E000863B1 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB2F47E28E0AE6E000863B1 /* BackgroundView.swift */; };
+		2AB2F47F28E0AE6E000863B1 /* GradientBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB2F47E28E0AE6E000863B1 /* GradientBackgroundView.swift */; };
 		2AB2F48928E0EA3E000863B1 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AB2F48828E0EA3E000863B1 /* Colors.xcassets */; };
 		2ABACA2C28BCB75300C7CB8E /* SimpleToast in Frameworks */ = {isa = PBXBuildFile; productRef = 2ABACA2B28BCB75300C7CB8E /* SimpleToast */; };
 		2AC8E1F028B4F8B2002D48F9 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC8E1EF28B4F8B2002D48F9 /* UserService.swift */; };
@@ -56,6 +60,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A05F5BC28F3208B005AB854 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		2A05F5C028F330D0005AB854 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		2A05F5C428F343A8005AB854 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		2A05F5C628F34B91005AB854 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		2A0725A528B4DC58007C38B7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2A23EA52288AEFC800D6DF02 /* Zaap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zaap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A23EA55288AEFC800D6DF02 /* Zaap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zaap.swift; sourceTree = "<group>"; };
@@ -82,7 +90,7 @@
 		2A6FD0D828B8B5AE002160C7 /* UserRespone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRespone.swift; sourceTree = "<group>"; };
 		2A6FD0DA28B8FA4C002160C7 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		2AB2F47C28E08B2A000863B1 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
-		2AB2F47E28E0AE6E000863B1 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		2AB2F47E28E0AE6E000863B1 /* GradientBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackgroundView.swift; sourceTree = "<group>"; };
 		2AB2F48828E0EA3E000863B1 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		2AC8E1EF28B4F8B2002D48F9 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		2AC8E1F628B4FB62002D48F9 /* UserWebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserWebRepository.swift; sourceTree = "<group>"; };
@@ -221,6 +229,7 @@
 			children = (
 				2A23EA81288AF01800D6DF02 /* SignInViewModel.swift */,
 				2A3C4326288D813900F77E12 /* SignUpViewModel.swift */,
+				2A05F5C628F34B91005AB854 /* MainViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -240,6 +249,7 @@
 			children = (
 				2A23EA7F288AF00400D6DF02 /* SignInView.swift */,
 				2A3C4324288D802400F77E12 /* SignUpView.swift */,
+				2A05F5BC28F3208B005AB854 /* MainView.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -247,10 +257,12 @@
 		2AC8E1ED28B4F6FF002D48F9 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				2AB2F47E28E0AE6E000863B1 /* BackgroundView.swift */,
+				2AB2F47E28E0AE6E000863B1 /* GradientBackgroundView.swift */,
 				2A3C4322288D711400F77E12 /* LabelledDividerView.swift */,
 				2AB2F47C28E08B2A000863B1 /* ToastView.swift */,
 				2A23EA83288AF02F00D6DF02 /* UserDetailView.swift */,
+				2A05F5C028F330D0005AB854 /* BackgroundView.swift */,
+				2A05F5C428F343A8005AB854 /* HeaderView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -412,6 +424,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A23EA84288AF02F00D6DF02 /* UserDetailView.swift in Sources */,
+				2A05F5BD28F3208B005AB854 /* MainView.swift in Sources */,
+				2A05F5C128F330D0005AB854 /* BackgroundView.swift in Sources */,
 				2A0725A628B4DC58007C38B7 /* Constants.swift in Sources */,
 				2A23EA8D288AF3F500D6DF02 /* Assets.swift in Sources */,
 				2A6FD0DB28B8FA4C002160C7 /* ApiError.swift in Sources */,
@@ -421,7 +435,7 @@
 				2A5FA69B28CF46CA0084719B /* ApiConvertor.swift in Sources */,
 				2A6FD0D728B8048D002160C7 /* User.swift in Sources */,
 				2AC8E1F728B4FB62002D48F9 /* UserWebRepository.swift in Sources */,
-				2AB2F47F28E0AE6E000863B1 /* BackgroundView.swift in Sources */,
+				2AB2F47F28E0AE6E000863B1 /* GradientBackgroundView.swift in Sources */,
 				2AC8E1F028B4F8B2002D48F9 /* UserService.swift in Sources */,
 				2A23EA8B288AF14300D6DF02 /* L10n.swift in Sources */,
 				2A23EA80288AF00400D6DF02 /* SignInView.swift in Sources */,
@@ -430,7 +444,9 @@
 				2A3C4325288D802400F77E12 /* SignUpView.swift in Sources */,
 				2A23EA82288AF01800D6DF02 /* SignInViewModel.swift in Sources */,
 				2AB2F47D28E08B2A000863B1 /* ToastView.swift in Sources */,
+				2A05F5C528F343A8005AB854 /* HeaderView.swift in Sources */,
 				2A6FD0D928B8B5AE002160C7 /* UserRespone.swift in Sources */,
+				2A05F5C728F34B91005AB854 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

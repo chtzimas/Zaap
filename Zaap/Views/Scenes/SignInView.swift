@@ -13,11 +13,20 @@ struct SignInView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                BackgroundView()
+                GradientBackgroundView()
                 VStack {
-                    welcomeView
-                    UserDetailView(userDetailText: $viewModel.email, isInputInvalid: $viewModel.showEmailPrompt, placeholder: L10n.emailPlaceholder, prompt: L10n.signInEmailPrompt)
-                    UserDetailView(userDetailText: $viewModel.password, isInputInvalid: $viewModel.showPasswordPrompt, placeholder: L10n.passwordPlaceholder, prompt: L10n.signInPasswordPrompt, isSecure: true)
+                    HeaderView(title: L10n.welcomeHeader)
+                    UserDetailView(userDetailText: $viewModel.email,
+                                   isInputInvalid: $viewModel.showEmailPrompt,
+                                   placeholder: L10n.emailPlaceholder,
+                                   prompt: L10n.signInEmailPrompt
+                    )
+                    UserDetailView(userDetailText: $viewModel.password,
+                                   isInputInvalid: $viewModel.showPasswordPrompt,
+                                   placeholder: L10n.passwordPlaceholder,
+                                   prompt: L10n.signInPasswordPrompt,
+                                   isSecure: true
+                    )
                     signInButtonView
                         .padding(.vertical, 20)
                     forgotPasswordButtonView
@@ -39,13 +48,6 @@ struct SignInView: View {
                 .padding(.horizontal, 30)
             }
         }
-    }
-    
-    private var welcomeView: some View {
-        Text(L10n.welcomeHeader)
-            .padding()
-            .font(.headline)
-            .foregroundColor(.white)
     }
     
     private var signInButtonView: some View {

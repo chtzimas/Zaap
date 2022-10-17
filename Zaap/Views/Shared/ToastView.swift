@@ -15,7 +15,7 @@ struct ToastView: View {
             Text(toastMessage)
         }
         .padding()
-        .background(Color.orange.opacity(0.7))
+        .background(Color(Asset.Colors.redErrorColor.color))
         .cornerRadius(15)
         .foregroundColor(.white)
     }

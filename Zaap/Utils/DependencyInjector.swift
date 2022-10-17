@@ -8,15 +8,18 @@
 final class DependencyInjector {
     static let shared = DependencyInjector()
     
-    var container: [String: Any] = [:]
+    private var container: [String: Any] = [:]
     
     private init() {}
     
     func buildDependencies() {
-        DependencyInjector.shared.register(type: UserWebRepository.self, component: UserWebRepository(urlSession: .shared))
-        DependencyInjector.shared.register(type: UserService.self, component: UserService(userWebRepository: DependencyInjector.shared.resolve(type: UserWebRepository.self)!))
+        let userWebRepository = UserWebRepository(urlSession: .shared)
+        let userService = UserService(userWebRepository: userWebRepository)
+        DependencyInjector.shared.register(type: UserWebRepository.self, component: userWebRepository)
+        DependencyInjector.shared.register(type: UserService.self, component: userService)
         DependencyInjector.shared.register(type: SignInViewModel.self, component: SignInViewModel())
-        DependencyInjector.shared.register(type: SignUpViewModel.self, component: SignUpViewModel(userService: DependencyInjector.shared.resolve(type: UserService.self)!))
+        DependencyInjector.shared.register(type: SignUpViewModel.self, component: SignUpViewModel(userService: userService))
+        DependencyInjector.shared.register(type: MainViewModel.self, component: MainViewModel())
     }
     
     private func register<Component>(type: Component.Type, component: Any) {

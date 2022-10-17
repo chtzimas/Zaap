@@ -18,6 +18,7 @@ class SignUpViewModel: ObservableObject {
     @Published var showPasswordPrompt = false
     @Published var showVerifiedPasswordPrompt = false
     @Published var showToast = false
+    @Published var signUpCompleted = false
     
     enum UserDetailCriteria {
         // valid: Chars, a '@', chars, a '.' and at least one char. e.g: takhs@takaros.c
@@ -25,6 +26,15 @@ class SignUpViewModel: ObservableObject {
         // valid: Minimum 8 chars - at least 1 lowercase, 1 uppercase, 1 number and 1 special char. e.g: a1^kklmR
         static let passwordRegex = try! NSRegularExpression(pattern: "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&<>*~:`-]).{8,}$")
     }
+    
+    enum SignUpState {
+        case none
+        case creatingUser
+        case userCreated
+        case userCreationFailed
+    }
+    
+    private(set) var signUpState: SignUpState = .none
     
     private var userService: UserService
     private(set) var toastMessage = ""
@@ -54,12 +64,16 @@ class SignUpViewModel: ObservableObject {
         self.userService = userService
     }
     
-    func signUp() async throws {
+    func signUp() async -> () {
         do {
+            signUpState = .creatingUser
             let user = try await userService.createUser(with: ["email": email, "username": username, "password": password])
-            print("user: \(user)")
+            signUpState = .userCreated
+            let mainViewModel = DependencyInjector.shared.resolve(type: MainViewModel.self)!
+            mainViewModel.user = user
+            await MainActor.run { signUpCompleted = true }
         } catch {
-            print("error: \(error)")
+            signUpState = .userCreationFailed
             if let error = error as? ApiErrorProtocol, let message = error.errorDescription {
                 toastMessage = message 
                 await MainActor.run { showToast = true }
