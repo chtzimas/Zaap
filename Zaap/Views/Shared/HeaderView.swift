@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct HeaderView: View {
-    
     private var title: String
     
     public init(title: String) {

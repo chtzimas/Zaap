@@ -38,9 +38,6 @@ struct SignUpView: View {
                                prompt: L10n.verifiedPasswordPrompt,
                                isSecure: true
                 )
-                NavigationLink(destination: MainView(), isActive: $viewModel.signUpCompleted) {
-                    EmptyView()
-                }
                 signUpButtonView
                     .padding(.vertical, 20)
             }
@@ -60,7 +57,7 @@ struct SignUpView: View {
             NavigationLink(destination: MainView(), isActive: $viewModel.signUpCompleted) {
                 EmptyView()
             }
-            Button(L10n.signUp) {
+            Button {
                 if viewModel.userDetailsMeetCriteria {
                     viewModel.clearUserDetailsPrompt()
                     Task {
@@ -69,11 +66,13 @@ struct SignUpView: View {
                 } else {
                     viewModel.showInvalidInputPrompt()
                 }
+            } label: {
+                Text(L10n.signUp)
+                    .frame(maxWidth: .infinity)
             }
             .buttonStyle(.borderedProminent)
             .tint(.accentColor)
         }
-        .frame(maxWidth: .infinity)
     }
 }
 
