@@ -54,7 +54,7 @@ struct ClearButton: View {
         Image(systemName: "xmark.circle.fill")
             .foregroundColor(Color(.placeholderText))
             .opacity((!text.isEmpty && isVisible) ? 1 : 0)
-            .onTapGesture { self.text = "" }
+            .onTapGesture { text = "" }
     }
 }
 

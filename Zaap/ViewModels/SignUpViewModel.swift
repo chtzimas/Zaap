@@ -20,60 +20,62 @@ class SignUpViewModel: ObservableObject {
     @Published var showToast = false
     @Published var signUpCompleted = false
     
-    enum UserDetailCriteria {
+    public var user: User?
+    
+    private enum UserDetailCriteria {
         // valid: Chars, a '@', chars, a '.' and at least one char. e.g: takhs@takaros.c
         static let emailRegex = try! NSRegularExpression(pattern: #"^\S+@\S+\.\S+$"#)
         // valid: Minimum 8 chars - at least 1 lowercase, 1 uppercase, 1 number and 1 special char. e.g: a1^kklmR
         static let passwordRegex = try! NSRegularExpression(pattern: "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&<>*~:`-]).{8,}$")
     }
     
-    enum SignUpState {
-        case none
+    enum State {
         case creatingUser
         case userCreated
         case userCreationFailed
+        case none
     }
     
-    private(set) var signUpState: SignUpState = .none
+    private(set) var state: State = .none
     
     private var userService: UserService
     private(set) var toastMessage = ""
     private(set) var toastOptions = SimpleToastOptions(alignment: .bottom, hideAfter: 3)
     
-    var userDetailsMeetCriteria: Bool {
-        emailMeetsCriteria && usernameMeetsCriteria && passwordMeetsCriteria && verifiedPasswordMeetsCriteria
+    func userDetailsMeetCriteria() -> Bool {
+        emailMeetsCriteria() && usernameMeetsCriteria() && passwordMeetsCriteria() && verifiedPasswordMeetsCriteria()
     }
     
-    private var emailMeetsCriteria: Bool {
+    func emailMeetsCriteria() -> Bool {
         UserDetailCriteria.emailRegex.matches(email)
     }
     
-    private var usernameMeetsCriteria: Bool {
+    func usernameMeetsCriteria() -> Bool {
         !username.isEmpty
     }
     
-    private var passwordMeetsCriteria: Bool {
+    func passwordMeetsCriteria() -> Bool {
         UserDetailCriteria.passwordRegex.matches(password)
     }
     
-    private var verifiedPasswordMeetsCriteria: Bool {
-        UserDetailCriteria.passwordRegex.matches(verifiedPassword) && verifiedPassword == password
+    func verifiedPasswordMeetsCriteria() -> Bool {
+        verifiedPassword == password
     }
     
     init(userService: UserService) {
         self.userService = userService
     }
     
-    func signUp() async -> () {
+    func signUp() async {
         do {
-            signUpState = .creatingUser
-            let user = try await userService.createUser(with: ["email": email, "username": username, "password": password])
-            signUpState = .userCreated
+            state = .creatingUser
+            user = try await userService.createUser(User(email: email, username: username, password: password))
+            state = .userCreated
             let mainViewModel = DependencyInjector.shared.resolve(type: MainViewModel.self)!
             mainViewModel.user = user
             await MainActor.run { signUpCompleted = true }
         } catch {
-            signUpState = .userCreationFailed
+            state = .userCreationFailed
             if let error = error as? ApiErrorProtocol, let message = error.errorDescription {
                 toastMessage = message 
                 await MainActor.run { showToast = true }
@@ -82,10 +84,10 @@ class SignUpViewModel: ObservableObject {
     }
     
     func showInvalidInputPrompt() {
-        showEmailPrompt = !emailMeetsCriteria
-        showUsernamePrompt = !usernameMeetsCriteria
-        showPasswordPrompt = !passwordMeetsCriteria
-        showVerifiedPasswordPrompt = !verifiedPasswordMeetsCriteria
+        showEmailPrompt = !emailMeetsCriteria()
+        showUsernamePrompt = !usernameMeetsCriteria()
+        showPasswordPrompt = !passwordMeetsCriteria()
+        showVerifiedPasswordPrompt = !verifiedPasswordMeetsCriteria()
     }
     
     func clearUserDetailsInput() {

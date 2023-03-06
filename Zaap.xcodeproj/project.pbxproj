@@ -15,7 +15,7 @@
 		2A23EA56288AEFC800D6DF02 /* Zaap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A23EA55288AEFC800D6DF02 /* Zaap.swift */; };
 		2A23EA5A288AEFC800D6DF02 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A23EA59288AEFC800D6DF02 /* Images.xcassets */; };
 		2A23EA5D288AEFC800D6DF02 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A23EA5C288AEFC800D6DF02 /* Preview Assets.xcassets */; };
-		2A23EA67288AEFC800D6DF02 /* ZaapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A23EA66288AEFC800D6DF02 /* ZaapTests.swift */; };
+		2A23EA67288AEFC800D6DF02 /* SignUpViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A23EA66288AEFC800D6DF02 /* SignUpViewModelTests.swift */; };
 		2A23EA71288AEFC800D6DF02 /* ZaapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A23EA70288AEFC800D6DF02 /* ZaapUITests.swift */; };
 		2A23EA73288AEFC800D6DF02 /* ZaapUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A23EA72288AEFC800D6DF02 /* ZaapUITestsLaunchTests.swift */; };
 		2A23EA80288AF00400D6DF02 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A23EA7F288AF00400D6DF02 /* SignInView.swift */; };
@@ -30,6 +30,10 @@
 		2A3C4327288D813900F77E12 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C4326288D813900F77E12 /* SignUpViewModel.swift */; };
 		2A5FA69928CF44200084719B /* UserApiConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5FA69828CF44200084719B /* UserApiConvertor.swift */; };
 		2A5FA69B28CF46CA0084719B /* ApiConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5FA69A28CF46CA0084719B /* ApiConvertor.swift */; };
+		2A629CBA29B4DD5C00C055FA /* User.json in Resources */ = {isa = PBXBuildFile; fileRef = 2A629CB929B4DD5C00C055FA /* User.json */; };
+		2A629CBD29B4F4A200C055FA /* UserServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A629CBC29B4F4A200C055FA /* UserServiceProtocol.swift */; };
+		2A629CC629B512A800C055FA /* UserWebRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A629CC529B512A800C055FA /* UserWebRepositoryTests.swift */; };
+		2A629CC929B514CC00C055FA /* Bundle+StubData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A629CC829B514CC00C055FA /* Bundle+StubData.swift */; };
 		2A6FD0D728B8048D002160C7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FD0D628B8048D002160C7 /* User.swift */; };
 		2A6FD0D928B8B5AE002160C7 /* UserRespone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FD0D828B8B5AE002160C7 /* UserRespone.swift */; };
 		2A6FD0DB28B8FA4C002160C7 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FD0DA28B8FA4C002160C7 /* ApiError.swift */; };
@@ -40,6 +44,7 @@
 		2ABACA2C28BCB75300C7CB8E /* SimpleToast in Frameworks */ = {isa = PBXBuildFile; productRef = 2ABACA2B28BCB75300C7CB8E /* SimpleToast */; };
 		2AC8E1F028B4F8B2002D48F9 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC8E1EF28B4F8B2002D48F9 /* UserService.swift */; };
 		2AC8E1F728B4FB62002D48F9 /* UserWebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC8E1F628B4FB62002D48F9 /* UserWebRepository.swift */; };
+		2AFE5186297B1A8500182BCC /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFE5185297B1A8500182BCC /* UserError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +75,7 @@
 		2A23EA59288AEFC800D6DF02 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2A23EA5C288AEFC800D6DF02 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2A23EA62288AEFC800D6DF02 /* ZaapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZaapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A23EA66288AEFC800D6DF02 /* ZaapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZaapTests.swift; sourceTree = "<group>"; };
+		2A23EA66288AEFC800D6DF02 /* SignUpViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModelTests.swift; sourceTree = "<group>"; };
 		2A23EA6C288AEFC800D6DF02 /* ZaapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZaapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A23EA70288AEFC800D6DF02 /* ZaapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZaapUITests.swift; sourceTree = "<group>"; };
 		2A23EA72288AEFC800D6DF02 /* ZaapUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZaapUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -86,6 +91,10 @@
 		2A3C4326288D813900F77E12 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		2A5FA69828CF44200084719B /* UserApiConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiConvertor.swift; sourceTree = "<group>"; };
 		2A5FA69A28CF46CA0084719B /* ApiConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConvertor.swift; sourceTree = "<group>"; };
+		2A629CB929B4DD5C00C055FA /* User.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = User.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
+		2A629CBC29B4F4A200C055FA /* UserServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceProtocol.swift; sourceTree = "<group>"; };
+		2A629CC529B512A800C055FA /* UserWebRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserWebRepositoryTests.swift; sourceTree = "<group>"; };
+		2A629CC829B514CC00C055FA /* Bundle+StubData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+StubData.swift"; sourceTree = "<group>"; };
 		2A6FD0D628B8048D002160C7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2A6FD0D828B8B5AE002160C7 /* UserRespone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRespone.swift; sourceTree = "<group>"; };
 		2A6FD0DA28B8FA4C002160C7 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
@@ -94,6 +103,7 @@
 		2AB2F48828E0EA3E000863B1 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		2AC8E1EF28B4F8B2002D48F9 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		2AC8E1F628B4FB62002D48F9 /* UserWebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserWebRepository.swift; sourceTree = "<group>"; };
+		2AFE5185297B1A8500182BCC /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,7 +189,10 @@
 		2A23EA65288AEFC800D6DF02 /* ZaapTests */ = {
 			isa = PBXGroup;
 			children = (
-				2A23EA66288AEFC800D6DF02 /* ZaapTests.swift */,
+				2A629CC729B5149000C055FA /* Extentions */,
+				2A629CB829B4DD1200C055FA /* StubData */,
+				2A23EA66288AEFC800D6DF02 /* SignUpViewModelTests.swift */,
+				2A629CC529B512A800C055FA /* UserWebRepositoryTests.swift */,
 			);
 			path = ZaapTests;
 			sourceTree = "<group>";
@@ -205,12 +218,37 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		2A629CB829B4DD1200C055FA /* StubData */ = {
+			isa = PBXGroup;
+			children = (
+				2A629CB929B4DD5C00C055FA /* User.json */,
+			);
+			path = StubData;
+			sourceTree = "<group>";
+		};
+		2A629CBB29B4F42600C055FA /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				2A629CBC29B4F4A200C055FA /* UserServiceProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		2A629CC729B5149000C055FA /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				2A629CC829B514CC00C055FA /* Bundle+StubData.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
 		2A6FD0D428B8040C002160C7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				2A6FD0DA28B8FA4C002160C7 /* ApiError.swift */,
 				2A6FD0D628B8048D002160C7 /* User.swift */,
 				2A6FD0D828B8B5AE002160C7 /* UserRespone.swift */,
+				2AFE5185297B1A8500182BCC /* UserError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -270,6 +308,7 @@
 		2AC8E1EE28B4F729002D48F9 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				2A629CBB29B4F42600C055FA /* Protocols */,
 				2AC8E1EF28B4F8B2002D48F9 /* UserService.swift */,
 			);
 			path = Services;
@@ -406,6 +445,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A629CBA29B4DD5C00C055FA /* User.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +476,8 @@
 				2A6FD0D728B8048D002160C7 /* User.swift in Sources */,
 				2AC8E1F728B4FB62002D48F9 /* UserWebRepository.swift in Sources */,
 				2AB2F47F28E0AE6E000863B1 /* GradientBackgroundView.swift in Sources */,
+				2AFE5186297B1A8500182BCC /* UserError.swift in Sources */,
+				2A629CBD29B4F4A200C055FA /* UserServiceProtocol.swift in Sources */,
 				2AC8E1F028B4F8B2002D48F9 /* UserService.swift in Sources */,
 				2A23EA8B288AF14300D6DF02 /* L10n.swift in Sources */,
 				2A23EA80288AF00400D6DF02 /* SignInView.swift in Sources */,
@@ -454,7 +496,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A23EA67288AEFC800D6DF02 /* ZaapTests.swift in Sources */,
+				2A23EA67288AEFC800D6DF02 /* SignUpViewModelTests.swift in Sources */,
+				2A629CC929B514CC00C055FA /* Bundle+StubData.swift in Sources */,
+				2A629CC629B512A800C055FA /* UserWebRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

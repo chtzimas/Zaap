@@ -5,16 +5,17 @@
 //  Created by Christos Tzimas on 23/8/22.
 //
 
+import Combine
 import Foundation
 
-class UserService {
-    private var userWebRepository: UserWebRepository
+class UserService: UserServiceProtocol {
+    private let userWebRepository: UserWebRepository
 
     init(userWebRepository: UserWebRepository) {
         self.userWebRepository = userWebRepository
     }
     
-    func createUser(with credentials: [String: String]) async throws -> User {
-       try await userWebRepository.createUser(with: credentials)
+    func createUser(_ user: User) async throws -> User? {
+       try await userWebRepository.createUser(user)
     }
 }

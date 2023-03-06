@@ -8,11 +8,15 @@
 import Foundation
 
 struct UserResponse: Decodable {
-    let data: User
+    let user: User?
+    
+    init(user: User?) {
+        self.user = user
+    }
 }
 
 extension UserResponse {
     enum CodingKeys: String, CodingKey {
-        case data = "user"
+        case user = "user"
     }
 }

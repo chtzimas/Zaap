@@ -58,7 +58,7 @@ struct SignUpView: View {
                 EmptyView()
             }
             Button {
-                if viewModel.userDetailsMeetCriteria {
+                if viewModel.userDetailsMeetCriteria() {
                     viewModel.clearUserDetailsPrompt()
                     Task {
                         await viewModel.signUp()

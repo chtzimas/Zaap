@@ -30,8 +30,10 @@ extension ApiConvertor {
     }
     
     func encode<T: Encodable>(_ data: T) throws -> Data {
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
         do {
-            return try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
+            return try encoder.encode(data)
         } catch {
             throw ApiError.encoding
         }

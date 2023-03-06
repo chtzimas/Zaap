@@ -28,17 +28,3 @@ enum ApiError: ApiErrorProtocol {
         }
     }
 }
-
-struct UserError: ApiErrorProtocol, Decodable {
-    let message: String?
-    
-    public var errorDescription: String? {
-        message
-    }
-}
-
-extension UserError {
-    enum CodingKeys: String, CodingKey {
-        case message = "message"
-    }
-}
