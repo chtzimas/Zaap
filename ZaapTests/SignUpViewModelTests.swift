@@ -81,16 +81,4 @@ class SignUpViewModelTests: XCTestCase {
         XCTAssertTrue(sut.password.isEmpty)
         XCTAssertTrue(sut.verifiedPassword.isEmpty)
     }
-    
-    func testIfUserCreatedAsRequested() async throws {
-        let user = try! JSONDecoder().decode(User.self, from: Bundle.stubbedDataFromJson(filename: "User"))
-        
-        sut.email = user.email!
-        sut.username = user.username!
-        sut.password = user.password!
-        await sut.signUp()
-        
-        try XCTSkipIf(sut.user == nil, "Something went wrong with the server communication.")
-        XCTAssertEqual(sut.user, user, "The user created differs from the one that was requested")
-    }
 }

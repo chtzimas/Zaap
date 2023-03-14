@@ -20,8 +20,6 @@ class SignUpViewModel: ObservableObject {
     @Published var showToast = false
     @Published var signUpCompleted = false
     
-    public var user: User?
-    
     private enum UserDetailCriteria {
         // valid: Chars, a '@', chars, a '.' and at least one char. e.g: takhs@takaros.c
         static let emailRegex = try! NSRegularExpression(pattern: #"^\S+@\S+\.\S+$"#)
@@ -70,7 +68,7 @@ class SignUpViewModel: ObservableObject {
         do {
             state = .creatingUser
             let request = SignUpRequest(user: User(email: email, username: username, password: password))
-            user = try await userService.signUp(with: request)
+            let user = try await userService.signUp(with: request)
             state = .userCreated
             let mainViewModel = DependencyInjector.shared.resolve(type: MainViewModel.self)!
             mainViewModel.user = user
