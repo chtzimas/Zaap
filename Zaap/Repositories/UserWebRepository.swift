@@ -15,8 +15,8 @@ class UserWebRepository {
         self.urlSession = urlSession
     }
     
-    func createUser(_ user: User) async throws -> User? {
-        let convertor = UserApiConvertor.createUser
+    func signUp(with request: SignUpRequest) async throws -> User? {
+        let convertor = UserApiConvertor.signUp(request: request)
         guard let url = URL(string: convertor.path) else {
             throw ApiError.invalidUrl
         }
@@ -26,7 +26,7 @@ class UserWebRepository {
         request.httpMethod = convertor.method
         request.addValue(contentType, forHTTPHeaderField: "Content-Type")
         request.addValue(contentType, forHTTPHeaderField: "Accept")
-        request.httpBody = try convertor.encode(user)
+        request.httpBody = convertor.body
         
         let (data, response) = try await urlSession.data(for: request)
         guard let response = (response as? HTTPURLResponse) else {
@@ -36,10 +36,12 @@ class UserWebRepository {
         let statusCode = response.statusCode
         switch statusCode {
         case 201:
-            let response: UserResponse = try convertor.decode(data)
-            return response.user
+            let response: SignUpResponse? = convertor.decode(data)
+            return response?.user
         case 409:
-            let error: UserError = try convertor.decode(data)
+            guard let error: SignUpError = convertor.decode(data) else {
+                return nil
+            }
             throw error
         default:
             throw ApiError.unknown

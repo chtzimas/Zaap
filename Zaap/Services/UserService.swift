@@ -15,7 +15,7 @@ class UserService: UserServiceProtocol {
         self.userWebRepository = userWebRepository
     }
     
-    func createUser(_ user: User) async throws -> User? {
-       try await userWebRepository.createUser(user)
+    func signUp(with request: SignUpRequest) async throws -> User? {
+       try await userWebRepository.signUp(with: request)
     }
 }

@@ -69,7 +69,8 @@ class SignUpViewModel: ObservableObject {
     func signUp() async {
         do {
             state = .creatingUser
-            user = try await userService.createUser(User(email: email, username: username, password: password))
+            let request = SignUpRequest(user: User(email: email, username: username, password: password))
+            user = try await userService.signUp(with: request)
             state = .userCreated
             let mainViewModel = DependencyInjector.shared.resolve(type: MainViewModel.self)!
             mainViewModel.user = user

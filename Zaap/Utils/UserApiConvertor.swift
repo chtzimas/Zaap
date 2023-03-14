@@ -8,7 +8,7 @@
 import Foundation
 
 enum UserApiConvertor: ApiConvertor {
-    case createUser
+    case signUp(request: SignUpRequest)
     case getUsers
     case getUserById(id: UUID)
     case updateUserById(id: UUID)
@@ -17,7 +17,7 @@ enum UserApiConvertor: ApiConvertor {
     var path: String {
         let url = Constants.Api.url
         switch self {
-        case .createUser:
+        case .signUp:
             return url + Constants.Api.Endpoints.user
         case .getUsers:
             return url + Constants.Api.Endpoints.user
@@ -32,7 +32,7 @@ enum UserApiConvertor: ApiConvertor {
     
     var method: String {
         switch self {
-        case .createUser:
+        case .signUp:
             return HttpMethods.post.rawValue
         case .updateUserById:
             return HttpMethods.put.rawValue
@@ -40,6 +40,15 @@ enum UserApiConvertor: ApiConvertor {
             return HttpMethods.delete.rawValue
         default:
             return HttpMethods.get.rawValue
+        }
+    }
+    
+    var body: Data? {
+        switch self {
+        case .signUp(let signUpRequest):
+            return encode(signUpRequest)
+        default:
+            return nil
         }
     }
 }

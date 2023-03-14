@@ -21,6 +21,7 @@ enum HeaderContentType: String {
 protocol ApiConvertor {
     var path: String { get }
     var method: String { get }
+    var body: Data? { get }
     var contentType: String { get }
 }
 
@@ -29,21 +30,25 @@ extension ApiConvertor {
         HeaderContentType.applicationJson.rawValue
     }
     
-    func encode<T: Encodable>(_ data: T) throws -> Data {
+    func encode<T: Encodable>(_ data: T) -> Data? {
         let encoder = JSONEncoder()
         encoder.outputFormatting = .prettyPrinted
+        var encoded: Data?
         do {
-            return try encoder.encode(data)
+            encoded = try encoder.encode(data)
         } catch {
-            throw ApiError.encoding
+            print(ApiError.encoding.errorDescription ?? "")
         }
+        return encoded
     }
     
-    func decode<T: Decodable>(_ data: Data) throws -> T {
+    func decode<T: Decodable>(_ data: Data) -> T? {
+        var decoded: T?
         do {
-            return try JSONDecoder().decode(T.self, from: data)
+            decoded = try JSONDecoder().decode(T.self, from: data)
         } catch {
-            throw ApiError.decoding
+            print(ApiError.decoding.errorDescription ?? "")
         }
+        return decoded
     }
 }

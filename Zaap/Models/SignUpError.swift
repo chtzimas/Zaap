@@ -1,5 +1,5 @@
 //
-//  UserError.swift
+//  SignUpError.swift
 //  Zaap
 //
 //  Created by Christos Tzimas on 20/1/23.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UserError: ApiErrorProtocol, Decodable {
+struct SignUpError: ApiErrorProtocol, Decodable {
     let message: String?
     
     public var errorDescription: String? {
@@ -15,7 +15,7 @@ struct UserError: ApiErrorProtocol, Decodable {
     }
 }
 
-extension UserError {
+extension SignUpError {
     enum CodingKeys: String, CodingKey {
         case message = "message"
     }

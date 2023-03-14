@@ -9,5 +9,5 @@ import Combine
 import Foundation
 
 protocol UserServiceProtocol {
-    func createUser(_ user: User) async throws -> User?
+    func signUp(with request: SignUpRequest) async throws -> User?
 }
