@@ -29,7 +29,7 @@
 		2A3C4325288D802400F77E12 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C4324288D802400F77E12 /* SignUpView.swift */; };
 		2A3C4327288D813900F77E12 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C4326288D813900F77E12 /* SignUpViewModel.swift */; };
 		2A58155729B7C32800553243 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A58155629B7C32800553243 /* MockURLProtocol.swift */; };
-		2A58155929B7C5B800553243 /* UserResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 2A58155829B7C5B800553243 /* UserResponse.json */; };
+		2A58155929B7C5B800553243 /* SignUpResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 2A58155829B7C5B800553243 /* SignUpResponse.json */; };
 		2A58155B29B7CBF300553243 /* UserWebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC8E1F628B4FB62002D48F9 /* UserWebRepository.swift */; };
 		2A5FA69928CF44200084719B /* UserApiConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5FA69828CF44200084719B /* UserApiConvertor.swift */; };
 		2A5FA69B28CF46CA0084719B /* ApiConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5FA69A28CF46CA0084719B /* ApiConvertor.swift */; };
@@ -93,7 +93,7 @@
 		2A3C4324288D802400F77E12 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		2A3C4326288D813900F77E12 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		2A58155629B7C32800553243 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
-		2A58155829B7C5B800553243 /* UserResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UserResponse.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
+		2A58155829B7C5B800553243 /* SignUpResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SignUpResponse.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		2A5FA69828CF44200084719B /* UserApiConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiConvertor.swift; sourceTree = "<group>"; };
 		2A5FA69A28CF46CA0084719B /* ApiConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConvertor.swift; sourceTree = "<group>"; };
 		2A629CB929B4DD5C00C055FA /* User.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = User.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
@@ -237,7 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				2A629CB929B4DD5C00C055FA /* User.json */,
-				2A58155829B7C5B800553243 /* UserResponse.json */,
+				2A58155829B7C5B800553243 /* SignUpResponse.json */,
 			);
 			path = StubData;
 			sourceTree = "<group>";
@@ -462,7 +462,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A58155929B7C5B800553243 /* UserResponse.json in Resources */,
+				2A58155929B7C5B800553243 /* SignUpResponse.json in Resources */,
 				2A629CBA29B4DD5C00C055FA /* User.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

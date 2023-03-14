@@ -15,6 +15,7 @@ class UserWebRepository {
         self.urlSession = urlSession
     }
     
+    @discardableResult
     func signUp(with request: SignUpRequest) async throws -> User? {
         let convertor = UserApiConvertor.signUp(request: request)
         guard let url = URL(string: convertor.path) else {
@@ -35,7 +36,7 @@ class UserWebRepository {
         
         let statusCode = response.statusCode
         switch statusCode {
-        case 201:
+        case 200, 201:
             let response: SignUpResponse? = convertor.decode(data)
             return response?.user
         case 409:

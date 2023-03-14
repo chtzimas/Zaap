@@ -13,7 +13,7 @@ extension Bundle {
         return stubbedData(filename: filename, withExtension: "json")
     }
 
-    static func stubbedData(filename: String, withExtension fileExtension: String) -> Data {
+    private static func stubbedData(filename: String, withExtension fileExtension: String) -> Data {
         guard let stubURL = Bundle(for: SignUpViewModelTests.self).url(forResource: filename, withExtension: fileExtension) else {
             XCTAssert(false, "\(filename).\(fileExtension) file not found")
             fatalError("file not found")
