@@ -5,12 +5,13 @@
 //  Created by Christos Tzimas on 9/10/22.
 //
 
+import Factory
 import SwiftUI
 
 class MainViewModel: ObservableObject {
-    var user: User?
+    @Injected(\.userService) private var userService
     
     func getUsername() -> String {
-        user?.username ?? ""
+        userService.user?.username ?? ""
     }
 }

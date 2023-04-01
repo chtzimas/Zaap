@@ -5,11 +5,12 @@
 //  Created by Christos Tzimas on 24/7/22.
 //
 
+import Factory
 import SimpleToast
 import SwiftUI
 
 struct SignUpView: View {
-    @StateObject var viewModel = DependencyInjector.shared.resolve(type: SignUpViewModel.self)!
+    @StateObject var viewModel = SignUpViewModel(userService: Container.shared.userService())
     
     var body: some View {
         ZStack {
@@ -78,6 +79,6 @@ struct SignUpView: View {
 
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView(viewModel: DependencyInjector.shared.resolve(type: SignUpViewModel.self)!)
+        SignUpView()
     }
 }

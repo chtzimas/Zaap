@@ -5,10 +5,11 @@
 //  Created by Christos Tzimas on 9/10/22.
 //
 
+import Factory
 import SwiftUI
 
 struct MainView: View {
-    @StateObject var viewModel = DependencyInjector.shared.resolve(type: MainViewModel.self)!
+    @StateObject var viewModel = MainViewModel()
     
     var body: some View {
         ZStack {

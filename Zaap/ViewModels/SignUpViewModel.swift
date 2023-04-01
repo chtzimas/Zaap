@@ -5,10 +5,13 @@
 //  Created by Christos Tzimas on 24/7/22.
 //
 
+import Factory
 import SimpleToast
 import SwiftUI
 
 class SignUpViewModel: ObservableObject {
+    @Injected(\.userService) private var userService
+    
     @Published var email = ""
     @Published var username = ""
     @Published var password = ""
@@ -35,8 +38,6 @@ class SignUpViewModel: ObservableObject {
     }
     
     private(set) var state: State = .none
-    
-    private var userService: UserService
     private(set) var toastMessage = ""
     private(set) var toastOptions = SimpleToastOptions(alignment: .bottom, hideAfter: 3)
     
@@ -67,14 +68,15 @@ class SignUpViewModel: ObservableObject {
     func signUp() async {
         do {
             state = .creatingUser
+            print("\(self): \(state)")
             let request = SignUpRequest(user: User(email: email, username: username, password: password))
-            let user = try await userService.signUp(with: request)
+            try await userService.signUp(with: request)
             state = .userCreated
-            let mainViewModel = DependencyInjector.shared.resolve(type: MainViewModel.self)!
-            mainViewModel.user = user
+            print("\(self): \(state)")
             await MainActor.run { signUpCompleted = true }
         } catch {
             state = .userCreationFailed
+            print("\(self): \(state)")
             if let error = error as? ApiErrorProtocol, let message = error.errorDescription {
                 toastMessage = message 
                 await MainActor.run { showToast = true }

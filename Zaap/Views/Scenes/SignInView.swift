@@ -5,10 +5,11 @@
 //  Created by Christos Tzimas on 18/7/22.
 //
 
+import Factory
 import SwiftUI
 
 struct SignInView: View {
-    @StateObject var viewModel = DependencyInjector.shared.resolve(type: SignInViewModel.self)!
+    @StateObject var viewModel = SignInViewModel()
     
     var body: some View {
         NavigationView {
@@ -99,6 +100,6 @@ struct SignInView: View {
 
 struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
-        SignInView(viewModel: DependencyInjector.shared.resolve(type: SignInViewModel.self)!)
+        SignInView()
     }
 }

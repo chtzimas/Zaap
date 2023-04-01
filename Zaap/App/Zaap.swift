@@ -9,12 +9,6 @@ import SwiftUI
 
 @main
 struct Zaap: App {
-    let container = DependencyInjector.shared
-    
-    init() {
-        container.buildDependencies()
-    }
-    
     var body: some Scene {
         WindowGroup {
             SignInView()

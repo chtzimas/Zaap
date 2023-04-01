@@ -5,6 +5,7 @@
 //  Created by Christos Tzimas on 22/7/22.
 //
 
+import Factory
 import XCTest
 @testable import Zaap
 
@@ -13,7 +14,7 @@ class SignUpViewModelTests: XCTestCase {
 
     override func setUpWithError() throws {
         try super.setUpWithError()
-        sut = DependencyInjector.shared.resolve(type: SignUpViewModel.self)!
+        sut = SignUpViewModel(userService: Container.shared.userService())
     }
 
     override func tearDownWithError() throws {
